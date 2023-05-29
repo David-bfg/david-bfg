@@ -18,18 +18,19 @@ timezone:
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Chirpy # the main title
+title: David G. Project Blog # the main title
 
-tagline: A text-focused Jekyll theme # it will display as the sub-title
+tagline: Projects I've done during covid and beyond that don't show on a resume. # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+  this is a showcase for projects I had fun with, planned and executed on goals. Many people might think the graph of Learning looks just like a stair step over time, while it is far closer to a loopdyloo.
+  With experience, knowledge and planning that breaks end goals into actionable steps. There is a lot you can do to make the loopdyloo less turbulent but when starting something learning just enough to be dangerous is where you push off and get ready to go for a ride no matter where it takes you.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: ""
+url: "https://david-bfg.github.io"
 
 github:
-  username: github_username # change to your github username
+  username: david-bfg # change to your github username
 
 twitter:
   username: twitter_username # change to your twitter username
