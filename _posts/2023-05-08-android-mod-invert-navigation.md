@@ -47,7 +47,7 @@ I extracted the ROM from my stock android phone to search for any missing links.
 
 ### Understanding the stock implementation
 
-![Desktop View](/assets/img/OneNav-Config.png){: width="280" .right}
+![OneNav Config Page](/assets/img/OneNav-Config.png){: width="280" .right}
 As I went through the stock ROM looking at the nav button configuration files and the Smali code (Java assembly code) for the app that was inverting the navigation it became apperant that this was a pure software solution. Thus this comment for the Lineage solution “Opt to not use Moto's OneNav solution and instead just listen for keycodes without a middleman listener.”
 ```
     -  key 621   SYSTEM_NAVIGATION_RIGHT 
