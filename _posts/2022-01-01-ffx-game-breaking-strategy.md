@@ -2,7 +2,7 @@
 title: FFX Game Breaking Strategy
 author: david
 date: 2022-01-01 00:00:00 -0500
-categories: [resourcefulness, 3D Printing]
+categories: [Fun and Resourceful, 3D Printing]
 tags: [arduino, gaming]
 render_with_liquid: false
 ---

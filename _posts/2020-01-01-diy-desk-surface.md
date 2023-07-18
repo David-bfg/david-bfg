@@ -3,7 +3,7 @@ title: DIY Desk Surface
 author: david
 date: 2020-08-06 00:00:00 -0500
 categories: [DIY, Desk]
-tags: [desk, handmade, office carpentry]
+tags: [desk, handmade, home office]
 render_with_liquid: false
 image:
   path: /assets/img/Desk-Surface.jpg
