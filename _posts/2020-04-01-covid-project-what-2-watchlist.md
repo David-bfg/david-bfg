@@ -13,6 +13,8 @@ image:
 
 ## Work in progress
 
+This post is the in progress part. What 2 Watchlist <https://what2watchlist.com> is live and available for general use. Go check it out to learn more.
+
 2020 - present: What 2 Watchlist
 
 1. Got tired of the boiling the frog treatment from netflix.
