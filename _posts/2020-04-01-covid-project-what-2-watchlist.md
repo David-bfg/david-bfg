@@ -18,8 +18,8 @@ This post is the in progress part. What 2 Watchlist <https://what2watchlist.com>
 2020 - present: What 2 Watchlist
 
 1. Got tired of the boiling the frog treatment from netflix.
-2. made a website for people to try and help them assess the library of a streaming service.
-3. main goal: Help manage and decide who has the best collection of media a user is actually looking to watch.
+2. Made a website to help people assess the libraries of all the different streaming service.
+3. Main goal: Make it easy to jump between streaming services by checking who's got the best collection of media that you're actually looking to watch.
 
 ## Checkout youtube introductory videos
 
