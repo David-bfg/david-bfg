@@ -5,6 +5,9 @@ date: 2019-10-15 00:00:00 -0500
 categories: [resourcefulness, 3D Printing]
 tags: [3d printing]
 render_with_liquid: false
+image:
+  path: /assets/img/FFmpeg-Icon.png
+  alt: FFmpeg Icon.
 ---
 
 ## Background info
