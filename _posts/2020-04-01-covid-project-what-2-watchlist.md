@@ -13,7 +13,7 @@ image:
 
 ## Work in progress
 
-This post is the in progress part. What 2 Watchlist <https://what2watchlist.com> is live and available for general use. Go check it out to learn more.
+This post is the in progress part. [What 2 Watchlist](https://what2watchlist.com) is live and available for general use. Go check it out to learn more.
 
 2020 - present: What 2 Watchlist
 
@@ -21,7 +21,7 @@ This post is the in progress part. What 2 Watchlist <https://what2watchlist.com>
 2. Made a website to help people assess the libraries of all the different streaming service.
 3. Main goal: Make it easy to jump between streaming services by checking who's got the best collection of media that you're actually looking to watch.
 
-## Checkout youtube introductory videos
+## Checkout this introductory playlist
 
 {% include embed/youtube.html id='htQgphI_Zpc' %}
 
