@@ -9,7 +9,7 @@
 
 - type: e-mail
   icon: "fas fa-envelope"
-  url: "/about-me"
+  url: "/about-me/#contact-me"
 
 - type: rss
   icon: "fas fa-rss"
