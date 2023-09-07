@@ -2,8 +2,8 @@
 title: FFmpeg Extension
 author: david
 date: 2019-10-15 00:00:00 -0500
-categories: [resourcefulness, 3D Printing]
-tags: [3d printing]
+categories: [Resourceful & Fun, Game Streaming]
+tags: [game streaming, ffmpeg, virtual machine, looking glass]
 render_with_liquid: false
 image:
   path: /assets/img/FFmpeg-Icon.png
@@ -16,7 +16,7 @@ I’m a developer who has used Linux machines in my normal day to day. For years
 
 At some point I was introduced to a strategy of relegating windows to it’s own VM and passing off a secondary graphics card to it so you could still play games. Then I could be unencumbered by the annoyances of windows for doing work and still be able to relax with games at the end of the day.
 
-Many other developer types had adopted such systems and someone made a nifty tool called Looking Glass. It allowed you to mirror the display of the VM to the host system. Why is this important? Usually in a VM the image is displayed on the host by emulating a simple generic graphics card. In our setup we give the VM a dedicated graphics card so there is no display available to the host without setting up something like Looking Glass. Thus Looking Glass allows you to control the VM in a window on the host if you use a dedicated graphics card.
+Many other developer types had adopted such systems and someone made a nifty tool called [Looking Glass](https://looking-glass.io). It allowed you to mirror the display of the VM to the host system. Why is this important? Usually in a VM the image is displayed on the host by emulating a simple generic graphics card. In our setup we give the VM a dedicated graphics card so there is no display available to the host without setting up something like Looking Glass. Thus Looking Glass allows you to control the VM in a window on the host if you use a dedicated graphics card.
 
 ## Coded FFmpeg extension to record from the VM’s desktop
 

@@ -3,7 +3,7 @@ title: Android Mod, Invert Navigation
 author: david
 date: 2023-05-08 00:00:00 -0500
 categories: [Problem Solving, Android]
-tags: [android, reverse engineering, lineageos]
+tags: [android, reverse engineering, lineageos, usability]
 render_with_liquid: false
 image:
   path: /assets/img/OneNav-Option.png
@@ -35,26 +35,29 @@ There was an existing implementation to turn the hardware navigation on and off 
 ### Digging deeper (Research)
 
 I would go digging through
- - LineageOS commits
- - posts about swapping navigation buttons
- - an open-source app that swapped nav buttons
- - the stock ROM to see the initial config
- - what the Moto app did to invert navigation
+
+- LineageOS commits
+- posts about swapping navigation buttons
+- an open-source app that swapped nav buttons
+- the stock ROM to see the initial config
+- what the Moto app did to invert navigation
 
 In the lineage commits there was another [implementation of IFingerprintNavigation](https://github.com/LineageOS/android_device_motorola_nash/commit/ee0f70af6c341aa04c8aaa28e7e7828ceaad0c67) on the big brother version of my phone. Unfortunately I was about five years too late to get any useful information from the author but it looked like the interface was written in Java. Java has stronger type definitions than the C language does, so I might be able to find a definition for the NavigationConfig object I had been looking at.
 
-I extracted the ROM from my stock android phone to search for any missing links. I found a java wrapper for the IFingerprintNavigation library. Using a Java de-compiler tool I was able to find a definition file for the  config object being passed to the get and setNavigationConfig. This is where I realized that the IFingerprintNavigation library likely came from the fingerprint sensor manufacturer not the smartphone manufacturer. The config object was full of timings for how responsive the sensor is to touch. Makes sense once you realize the separation of concerns; the firmware would do things like turn on and off, swipe left, right, up, or down. The OS will pick it up from there and trigger whatever you want the button to do.
+I extracted the ROM from my stock android phone to search for any missing links. I found a java wrapper for the IFingerprintNavigation library. Using a Java de-compiler tool I was able to find a definition file for the config object being passed to the get and setNavigationConfig. This is where I realized that the IFingerprintNavigation library likely came from the fingerprint sensor manufacturer not the smartphone manufacturer. The config object was full of timings for how responsive the sensor is to touch. Makes sense once you realize the separation of concerns; the firmware would do things like turn on and off, swipe left, right, up, or down. The OS will pick it up from there and trigger whatever you want the button to do.
 
 ### Understanding the stock implementation
 
 ![OneNav Config Page](/assets/img/OneNav-Config.png){: width="280" .right}
 As I went through the stock ROM looking at the nav button configuration files and the Smali code (Java assembly code) for the app that was inverting the navigation it became apperant that this was a pure software solution. Thus this comment for the Lineage solution “Opt to not use Moto's OneNav solution and instead just listen for keycodes without a middleman listener.”
+
 ```
-    -  key 621   SYSTEM_NAVIGATION_RIGHT 
+    -  key 621   SYSTEM_NAVIGATION_RIGHT
     -  key 620   SYSTEM_NAVIGATION_LEFT
     +  key 620   BACK          VIRTUAL
     +  key 621   APP_SWITCH    VIRTUAL
 ```
+
 The stock ROM had the left and right fingerprint swipes triggering generic navigation controls. Then somewhere in software the Moto OneNav solution picks up those events and triggers the appropriate action. Now because the software is triggering the nav buttons it can easily swap the actions without modifying directly what the keys do. That setting lives on the read only partition and is not intended to be modified.
 
 ## The Direct Fix

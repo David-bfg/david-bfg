@@ -3,7 +3,7 @@ title: DIY Desk Surface
 author: david
 date: 2020-08-06 00:00:00 -0500
 categories: [DIY, Desk]
-tags: [desk, handmade, home office]
+tags: [desk, handmade, home office, frugal build]
 render_with_liquid: false
 image:
   path: /assets/img/Desk-Surface.jpg
@@ -11,9 +11,11 @@ image:
 ---
 
 ## Lost desk surface
+
 During early covid I ended up moving. The desk surface was too big to take with me but I kept the overall frame.
 
 ## DIY desk upgrade
+
 I had heard of plenty of people renovating a desk or table with a big butcher block countertop grabbed from IKEA.
 
 <h4>What I was looking for</h4>
@@ -29,6 +31,7 @@ I had heard of plenty of people renovating a desk or table with a big butcher bl
 Looked at the different types of plywood sheets people use for desks. There seemed to be the classic option of plywood thats just wood sheets that get glued and stamped together or MDF that is stronger but needs water protection. I went with MDF figuring I'd just put on a layer of polyurithane to protect it from spills.
 
 ## Build process
+
 <h4>Materials and tools</h4>
  - 4' x 8' sheet of MDF and had it cut down at the store to 40" x 70"
  - router and bit to round off the edges

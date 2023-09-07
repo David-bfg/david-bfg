@@ -3,7 +3,7 @@ title: Arduino, Auto Fire
 author: david
 date: 2018-09-30 00:00:00 -0500
 categories: [Problem Solving, Arduino]
-tags: [arduino, gaming, usability]
+tags: [arduino, gaming, usability, circuits]
 render_with_liquid: false
 image:
   path: /assets/img/Auto-Fire-Arduino.jpg

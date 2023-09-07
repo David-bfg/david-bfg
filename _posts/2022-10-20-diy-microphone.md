@@ -3,7 +3,8 @@ title: DIY Microphone
 author: david
 date: 2022-10-20 00:00:00 -0500
 categories: [DIY, 3D Printing]
-tags: [3d printing, microphone]
+tags:
+  [3d printing, microphone, re-design, improve design, frugal build, circuits]
 pin: true
 image:
   path: /assets/img/Mic-Pic.jpg

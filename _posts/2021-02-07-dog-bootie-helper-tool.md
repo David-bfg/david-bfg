@@ -3,7 +3,7 @@ title: Dog Bootie Helper Tool
 author: david
 date: 2021-02-07 00:00:00 -0500
 categories: [DIY, 3D Printing]
-tags: [3d printing]
+tags: [3d printing, cad, helper tool]
 render_with_liquid: false
 image:
   path: /assets/img/Dog-Bootie-Tool.jpg
@@ -12,7 +12,7 @@ image:
 
 ## Problem
 
-Before a cold snap I got booties for my dog and to my surprise they were $14 repurposed balloons. It was one of the cheapest and effective solutions to such a novel problem. Respect to the hustle of taking a well established product and turning it directly to profit. Trouble was how hard it would be to put it on the dogs paws. 
+Before a cold snap I got booties for my dog and to my surprise they were $14 repurposed balloons. It was one of the cheapest and effective solutions to such a novel problem. Respect to the hustle of taking a well established product and turning it directly to profit. Trouble was how hard it would be to put it on the dogs paws.
 
 ## Solution
 

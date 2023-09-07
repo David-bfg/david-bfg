@@ -3,7 +3,7 @@ title: Photogrammetry Arch Support
 author: david
 date: 2021-06-01 00:00:00 -0500
 categories: [DIY, 3D Printing]
-tags: [arduino, gaming]
+tags: [cad, 3d printing, photogrammetry, frugal build]
 render_with_liquid: false
 image:
   path: /assets/img/Dense-Point-Cloud-Foot.PNG
@@ -12,7 +12,7 @@ image:
 
 ## Background info
 
-I have feet with hight arches and one day I had some pain that if not related was exacerbated by a lack of arch support. Looking around online or in person it was hard to find something that you could feel confident would address the problem. At least while looking online I found interesting ideas; such as a podiatrist making 3D printed supports fitted specifically to each person and a similar DIY solution to 3D print your own insoles. I thought those were good ideas and I'd try to do similar by printing my own using photogrammetry. 
+I have feet with hight arches and one day I had some pain that if not related was exacerbated by a lack of arch support. Looking around online or in person it was hard to find something that you could feel confident would address the problem. At least while looking online I found interesting ideas; such as a podiatrist making 3D printed supports fitted specifically to each person and a similar DIY solution to 3D print your own insoles. I thought those were good ideas and I'd try to do similar by printing my own using photogrammetry.
 
 ## Photogrammetry process
 

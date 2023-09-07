@@ -3,7 +3,7 @@ title: Design Magnetic Phone Mount
 author: david
 date: 2018-09-21 00:00:00 -0500
 categories: [DIY, 3D Printing]
-tags: [3d printing]
+tags: [3d printing, phone mount, cad, neodymium magnets]
 render_with_liquid: false
 image:
   path: /assets/img/Phone-Mount-Design.PNG
