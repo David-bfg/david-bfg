@@ -1,7 +1,7 @@
 ---
 title: DIY Microphone
 author: david
-date: 2022-01-01 00:00:00 -0500
+date: 2022-10-20 00:00:00 -0500
 categories: [DIY, 3D Printing]
 tags: [3d printing, microphone]
 pin: true
