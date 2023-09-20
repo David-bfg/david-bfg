@@ -4,7 +4,7 @@ author: david
 date: 2020-04-01 00:00:00 -0500
 last_modified_at: 2023-05-30 00:00:00 -0500
 categories: [Problem Solving, Streaming]
-tags: [streaming, watchlist, web development, save money]
+tags: [streaming, watchlist, web development, save money, video guide]
 pin: true
 image:
   path: /assets/img/W2W-Home.jpg
