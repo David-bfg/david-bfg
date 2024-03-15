@@ -13,7 +13,6 @@ tags:
     circuits,
     save money,
   ]
-pin: true
 image:
   path: /assets/img/Mic-Pic.jpg
   alt: DIY Microphone.
