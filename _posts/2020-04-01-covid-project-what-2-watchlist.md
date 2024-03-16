@@ -187,6 +187,19 @@ overall tested the waters on what would be needed but I am an individual not in 
 Initial rush to work on a project I was motivated by was halted by needing to move cross state.
 project starts and stops were caused because of external concerns such as getting access to an api that was publicly available, streaming data availability, and how could I actually offer virtual card management to allow users to pause and start services from one management page.
 
+Participated in a Devember coding event hosted by the level1tech forum.
+Shared weekly development progress and dialed in my focus to get the project to a working state.
+At the end I had a publicly accessible site that I could say I was proud of and would continue to work on.
+
+While building the project I had ran into some annoyances with creating similar boiler plate code using the Blaze framework included in meteor.
+I had learned of reactive frameworks that existed mainly react and vue.
+Vue seemed to have a more similar syntax to what I'd already had in the project, with a logical component framework that seemed easy to use and the online tutorial was three hours instead of ten for react.
+
+This would also prove to come with some setbacks.
+Vue was not as widely adopted so I ran into some significant hurdles trying to get all the packages and tools I wanted to play nicely.
+I notably silent failures (install load forever) and dependency version conflicts.
+After all this trouble I went looking for more and did a second rewrite moving to vue 3.
+
 ## tentative plans for future development
 
 Hoping to create a companion app to manage users virtual cards locally.
