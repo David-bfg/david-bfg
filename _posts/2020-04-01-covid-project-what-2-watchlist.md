@@ -11,9 +11,34 @@ image:
   alt: What 2 Watchlist Homepage.
 ---
 
+# Navigating The Streaming Explosion: A Covid Project
+
 ## Project Motivation
 
-Ending each day relaxing and turning on Netflix can make you keenly aware of how limited of a library they actually have. & others stuck on a limited content library. The recommendation algorithm: it does not matter how big the library is if the recommendation algorithm keeps recommending only a handful of movies that it thinks you may like
+As we unwind at the end of each day, the promise of streaming services like Netflix beckons us with a vast array of entertainment options. Yet, beneath the surface, lies a frustration familiar to many of us streaming connoisseurs. Browsing from one category to the next with the same movies showing up again and again. Thus you realize just how limited of a library your looking at. It's a scenario not confined to one platform but pervasive across the streaming landscape.
+
+The algorithms meant to assist us in our quest for the perfect show or movie often fall short, offering only a narrow selection of recommendations that fail to capture the breadth of available content. While undoubtedly helpful in surfacing relevant options, these algorithms sometimes serve as a barrier, obscuring the true extent of the library's offerings.
+
+I've found myself countless times resigned to choosing from the limited suggestions, even when I knew there must be more out there, somewhere in the haystack.
+
+## Building a Better Way
+
+In a world where streaming services are abundant, yet content discovery remains a challenge, I embarked on a mission to reshape the way we engage with our entertainment choices. It dawned on me that empowering consumer choice was the key to unlocking the abundance of good content available for streaming. No longer would we settle for the limited offerings presented by a single platform's recommendation algorithms; instead, we would harness the collective power of all available platforms.
+
+Enter What 2 Watchlist: a revolutionary tool designed to transcend the limitations of individual services. With What 2 Watchlist, users can easily curate their personalized libraries by quickly grabbing some of the best blockbusters and finding those forgotten gems that are now streaming for free. We’re empowering users to take control of their entertainment choices. No longer constrained by algorithmic biases or platform exclusivity, viewers can explore the streaming world based on what they Want 2 Watchlist.
+
+## My Vision - Project Goals
+
+- [x] Search and view media details to quickly find recent blockbusters and timeless classics.
+- [x] Allow users to create personalized watchlists, ensuring easy access to their favorite content.
+- [x] Browse which streaming platforms offer the media on their watchlist, allowing for informed subscription decisions.
+- [x] Compare and rotate through streaming services to optimize content availability and variety.
+- [ ] Implement privacy.com-like virtual cards to automate subscription management to automatically subscribe to the best content libraries.
+- [x] Bonus feature: Match watchlists for movie nights with friends, fostering shared viewing experiences and enhancing social connections.
+
+Join me on this journey as we redefine the streaming experience and empower ourselves to take control of our entertainment choices. While existing services provide a content firehose for endless browsing, What 2 Watchlist offers a curated solution tailored to each user's preferences and needs.
+
+# Development Journey
 
 ## TLDR;
 
@@ -22,25 +47,6 @@ Find out about this project by just using it. [What 2 Watchlist](https://what2wa
 Watch my [YouTube Playlist for a feature overview](https://www.youtube.com/watch?v=htQgphI_Zpc&list=PL_w39zPxLArXwG_s3gm_6X4PoheYBw3TT&pp=iAQB)
 
 {% include embed/youtube.html id='htQgphI_Zpc' %}
-
-## <s>Looking For</s> Building a Better Way
-
-I stopped asking "what’s good on Netflix." Back in the day when you'd get DVDs in the mail, the question was "what's good?"
-There is an abundance of great content today, blind trust in your favorite service.
-on several different services. How can I get the best content around?
-
-I thought people are looking at this problem wrong it should be “who is streaming what I want to watch.” While there are services out there that look at what’s streaming on a given service they don’t answer my question they just let me browse until I’m blue.
-
-Thus I have been working on a project with the idea to go and build up a watchlist to match against the existing streaming services out there be it something available for free with adds or some type of original content. You can get the most bang for the buck and move on to the next streaming library once you’ve cleared it out.
-
-## Project Goals
-
-- [x] search & view media details
-- [x] users can create watchlist
-- [x] browse who streams the media on your watchlist
-- [x] compare and rotate through streaming services
-- [ ] privacy.com like virtual cards to auto swap streaming subscriptions
-- [x] Bonus: Match between watchlists for movie night with friends
 
 ## Finding an API
 
@@ -78,6 +84,8 @@ later revisions were using the TMDB API and that would return streaming data for
 
 with that foundation and backend API streaming data I had the foundation for browsing through a watchlist.
 you would start with your full watchlist and filter down by what streaming service you wanted to review how it matches with your interests or just
+
+# Feature Highlights
 
 ### search
 
@@ -200,6 +208,8 @@ Vue was not as widely adopted so I ran into some significant hurdles trying to g
 I notably silent failures (install load forever) and dependency version conflicts.
 After all this trouble I went looking for more and did a second rewrite moving to vue 3.
 
+# future plans
+
 ## tentative plans for future development
 
 Hoping to create a companion app to manage users virtual cards locally.
@@ -212,3 +222,5 @@ so people might be mislead by a show saying it is available for free or on a str
 
 These are all things I need to be motivated to to and until I have actual users I'm just making this for myself.
 Currently it is working good enough for me.
+
+# Conclusion
