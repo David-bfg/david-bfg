@@ -42,13 +42,17 @@ Join me on this journey as we redefine the streaming experience and empower ours
 
 ## TLDR;
 
-Find out about this project by just using it. [What 2 Watchlist](https://what2watchlist.com) is live and available for general use. Go check it out to learn more.
+Discover the journey behind What 2 Watchlist by exploring its features firsthand. Visit [What 2 Watchlist](https://what2watchlist.com) now!
 
-Watch my [YouTube Playlist for a feature overview](https://www.youtube.com/watch?v=htQgphI_Zpc&list=PL_w39zPxLArXwG_s3gm_6X4PoheYBw3TT&pp=iAQB)
+Watch a comprehensive feature overview on my [YouTube Playlist](https://www.youtube.com/watch?v=htQgphI_Zpc&list=PL_w39zPxLArXwG_s3gm_6X4PoheYBw3TT&pp=iAQB)
 
 {% include embed/youtube.html id='htQgphI_Zpc' %}
 
-## Finding an API
+## Finding The Right API
+
+The first step on the journey to build What 2 Watchlist began with an exploration of the various API options available. There’s a vast amount of movie websites but only a handful of providers for the type of data I was looking for.
+
+Possible API Sources
 
 - Reelgood
 - just watch
@@ -57,33 +61,162 @@ Watch my [YouTube Playlist for a feature overview](https://www.youtube.com/watch
 - The Open Movie Database
 - TMDB
 
-I began by searching for sources for streaming data and found these providers.
-I got started using Reelgood. it had both movie and show basic data along with information about where media was streaming. Unfortunately they did not have a public API but they had a well designed rest API that you could find out how it worked by simply using their website and watching the http requests in the developer console.
+While all of them had the basics, I needed something that had data on streaming availability and a publicly accessible API.
 
-allowed me to create some basic pages that I could run locally.
-Search, browse streaming services for watchlist matches and a lobby system-feature to find what to watch with friends.
+I dived right into development utilizing Reelgood as my primary API source.
+Their comprehensive TV and movie data collection included streaming data.
+It was everything I’d need but access to their API had been discontinued for public access.
+Undeterred, I delved into their well-designed REST API, leveraging developer tools to peek into HTTP requests to understand their API interface.
+This allowed me to play around and get a basic prototype running with search, browsing streaming services, and a lobby system.
+I knew this would have broken some terms and conditions to publish an app that was piggybacking off of someone else’s service without permission.
 
-I was aware that this solution was not going to be a long term acceptable use case.
-if I was going to publish my app I'd need to use an api that was public facing.
-so I was happy to have found that TMDB a publicly available api.
-Unfortunately they did not include streaming data initially so I had paused development for a while.
-I came back to the project later on and found they partnered with just watch to include streaming data availability for their API.
+Now that I knew my goals for the app were possible, I’d need to find the same data in a publicly accessible and sustainable API before I could publish the app. Enter TMDB, walking in as the good guys, with overall generous terms and a flexible free-use option. While they were initially lacking streaming data, TMDB later partnered with Just Watch as a data source for integrating streaming availability into their API.
 
 ## App Development
 
-I started off using a tool I was familiar with specifically meteor.js.
-It's a framework for quickly making PWAs that was popular when I first got into the Node.js ecosystem.
-I began development by creating very simple pages.
-meteor has a convenient user accounts package to help jump start creating a new app.
-I'd first implement the basic search functionality then allow you to track media by adding it to your users watchlist.
-On the backend each movie added to your watchlist was queried for all the streaming services related so it would have that data cached locally.
+Embarking on any project requires a thoughtful selection of tools and frameworks tailored to the task at hand.
+As a solo developer, the efficiency and effectiveness of these choices significantly influence the project's trajectory.
+For me, prioritizing tools that facilitate rapid development without compromising functionality was essential, allowing me to focus on actual implementation rather than getting bogged down in tedious tasks.
 
-next steps were to combine the users watchlist with the available streaming data and build a page for browsing where what you want to watch is currently streaming.
-the initial implementation had only bothered getting data for what was streaming in the US.
-later revisions were using the TMDB API and that would return streaming data for all countries.
+### The Base Tool-Set
 
-with that foundation and backend API streaming data I had the foundation for browsing through a watchlist.
-you would start with your full watchlist and filter down by what streaming service you wanted to review how it matches with your interests or just
+In pursuit of these goals, I turned to the familiar landscape of the npm and Node.js ecosystem. Harnessing my familiarity with JavaScript, I initially opted for Meteor.js, a versatile framework renowned for its expediency in crafting Progressive Web Applications (PWAs).
+Meteor.js offered an integrated environment that streamlined development, boasting a publish-subscribe model that seamlessly bridged the gap between client and server.
+With its robust user-accounts package and JavaScript-centric architecture, Meteor.js provided a solid foundation for realizing the vision of What 2 Watchlist.
+
+Utilizing Meteor.js and a reliable data source from Reelgood, I swiftly laid the groundwork for the application's core functionalities. Within a short span, users could join the platform, create personalized watchlists, and seamlessly browse streaming availability. An example of what can be achieved when proficiency meets powerful tools.
+
+### Going From Prototype To Published
+
+However, as the project progressed, the need for a more robust and compliant API became apparent. Transitioning to TMDB not only ensured adherence to legal standards but had also broadened the application's functionality. With TMDB having similar but well documented data, I now had easy access to the global availability of streaming data. Now users could browse through the global market for streaming content. Know not just what was streaming but where it was streaming. The integration of TMDB represented a significant milestone, unlocking new possibilities and broadening the app's appeal.
+
+#### Bonus Lobby
+
+With the core functionalities of the application established, attention turned towards more complex functionalities.
+Among these was the development of a movie night lobby, designed to facilitate collaborative movie selection among friends.
+This bonus feature took priority, the other features had some liability concerns I’d need to address before publishing.
+Despite its seemingly straightforward premise, the implementation posed several challenges.
+While Meteor has many built in features to sync data from the server a lobby requires some transactional synchronization on the server.
+I had to make sure the backend server code was being executed asynchronously and accurately relaying if the lobby is waiting for people to join or already in progress.
+Nonetheless, perseverance, a whiteboard and innovative (hacky) problem-solving ultimately led to the successful realization of this feature, but the overall feature complexity would have me revisiting the code base again and again later on down the line.
+Overall this gave users a great way to engage with the app by quickly comparing movie interests with friends.
+
+#### The Road To Virtual Cards
+
+As the project approached its final stages, attention turned towards deployment readiness and the potential/hurdles of monetization through virtual card features.
+After sharing the app with a select group and doing some research, I discovered Privacy.com was rebranding to Lithic.
+Expanding their platform to give businesses the abilities for virtual card issuance and management services.
+
+This was precisely the service needed to implement virtual cards for automating subscription management.
+Recognizing this as potentially the killer feature of this app, development efforts swiftly began on this feature.
+Utilizing Lithic's sandbox environment, initial steps were taken to establish user sign-up processes, and explore API calls for the card management functionalities.
+
+However, before fully incorporating virtual card functionality, it was essential to establish a robust system for tracking and managing user subscriptions.
+Envisioning the manager acting as a monthly value checkup where users would chose their best subscription options.
+Thus, focus shifted towards facilitating informed decision-making on streaming services.
+This involved curating a selection of popular streaming services, gathering data on pricing and available plans, and developing tools for comparing and evaluating each service's offerings.
+
+The ultimate goal was to empower users to effortlessly manage and optimize their subscription choices based on their individual viewing preferences.
+With the groundwork laid for subscription management services, the path towards integrating Lithic's virtual card API for seamlessly subscription hopping could now start to crystallize.
+
+The pursuit of virtual card integration and subscription management presented a sizable amount of work that was a few layers in, making it likely to only be used by power users.
+Considering the liability concerns around handling other peoples money this did not reach a completion stage, but a proof of concept stage.
+I'd gone and implemented the majority of features needed just to verify that it was possible.
+
+Despite the promise and potential of virtual card integration, the endeavor presented a measurable amount of work and complexity.
+Liability concerns surrounding handling other people's financial transactions added an additional layer of scrutiny.
+As a result, while a proof of concept was achieved, reaching a full implementation stage remained a work in progress.
+Nonetheless, there is still a sense of excitement surrounding this feature, leaving open the possibility of revisiting it to enhance the user experience and monetize this project.
+
+#### Revamping UI Experience
+
+Moving beyond functionality, my attention now directed towards enhancing the application's user interface and experience.
+Recognizing the lack of visual appeal in a white background and interactive text, I would need a complete UI overhaul.
+I evaluated various UI frameworks and ultimately chose Semantic-UI for its strong documentation + examples, a sleek UI, with a full suite of customizable components and most importantly it was free.
+
+After seeing all that Semantic-UI had to offer I had a clear picture of where and how I could use its components to improve the user experience.
+The meticulous process of redesigning and refining each page yielded a transformational result, elevating the overall aesthetic and usability of the application.
+Semantic-UI proved to be a strong library where the developer experience was as good or better than most of my previous experiences; where I’d just throw bootstrap classes at the project and call it a day.
+
+#### Security
+
+With the majority of milestones achieved and the app nearing readiness for public release, emphasis was placed on fortifying its security and accessibility.
+Measures such as user rate limiting, HTTP header permissions, and server hardening were implemented to safeguard user data and mitigate potential vulnerabilities.
+Furthermore, the adoption of HTTPS encryption via Nginx and Let's Encrypt ensured secure communication channels, reinforcing user trust and confidence in the platform.
+
+#### Publish
+
+As the journey of prototype to publication draws to a close, What2Watchlist became publicly accessible.
+With all project goals accomplished, except for virtual card integration,
+(The potential liability of this feature was too high for something that’s currently just a portfolio project.)
+Nonetheless, I am truly satisfied by what I have accomplished.
+
+As a portfolio project it showcases the growth I have experienced embarking on a meaningful solo development project.
+The project represents the culmination of months of hard work overcoming various challenges and learning valuable lessons along the way.
+The progress made thus far stands as a testament to the power that all software developers are capable of harnessing through perseverance and foundational problem-solving skills.
+
+### Re-Evalueate Re-Factor
+
+Beyond all the work I had done to sprint twoards getting What 2 Watchlist hosted publically I had some quality of life features and technical changes I wanted to address.
+The first of those would be to port the frontend from meteor to vue.js.
+I had found myself fustrated with blaze the default frontend framework in meteor.js.
+a lack of reactivity meant there was a lot of boilerplate that had become tedeous.
+I began Looking at the two popular reactive frameworks vue.js and react.js.
+Comparing the two I could see that vue had syntax similar to what I was already used to and a component framework that looked straightforward.
+By contrast the "react is not a framework" design made it much more unstructured, to the point where introductionary content didn't click as easilly.
+Looking for youtube tutorials for each the react videos were 8-10 hours where vue was 3 hours to go over everything.
+That was enough to end my search and chose vue I probably would have gone for react if I'd know how much more ubuiquitous it was for job prospects.
+
+I had overall made my choice and found myself struggling with dependencies.
+I had some dependency errors poping up for me.
+Solving them took a good amount of investigation because meteor and vue were not as well documented.
+There were example projects that worked until you tried to update and you had very few resources found if you were trying to google the problem.
+Eventually I found the one forum post with a solution.
+
+I went about porting the UI to vue components, mostly I was converting syntax with many pages now having simpler code for managing inputs and dividing views into components.
+There had been a vue specific UI library called element plus I had passed over before because of its platform specific to vue.
+It had a lot of UI components that I thought were great and had the proper hooks to manage themselves like auto sorting in tables and infinite scroll.
+It had the right amount of good defaults that gave you everything you'd want 90% of the time and the proper hooks to customize it for your liking.
+
+Modifying the lobbys and decoupling the default accounts signin page were the hard parts.
+the lobby was just a complex section of code so any modification requires a reevaluation of the code.
+The signin was a whole new page that needed to be created but was helped out by an MIT licensed example project that I used as a starter template for the login page.
+
+While there were a lot of conveniences from meteor I had begun to start reevaluating if certain components could be modified.
+I'd start to slowly swap things out with the goal of using tools with larger comunities and relying on the meteor platform less.
+
+#### Quality of life improvements
+
+- Popular media over the years since 2005.
+- UI cleanup: card borders were unappealing, etc.
+- Easier to view where media is streaming in watchlist and media details.
+- backend unit tests.
+- a drawrer for hiding and editing your favorite streaming services you want to compare.
+- Element UI tables for sorting streaming service metrics based on user choice.
+- Watchlist creation without creating an account
+- cleaning rough edges in UI and porting some UI elements to the new library.
+
+## development blocks and push through to publish
+
+    External challenges and interruptions encountered during development.
+    Participation in Devember coding event for focused progress.
+    Transitioning to Vue.js for improved development efficiency.
+
+Initial rush to work on a project I was motivated by was halted by needing to move cross state.
+project starts and stops were caused because of external concerns such as getting access to an api that was publicly available, streaming data availability, and how could I actually offer virtual card management to allow users to pause and start services from one management page.
+
+Participated in a Devember coding event hosted by the level1tech forum.
+Shared weekly development progress and dialed in my focus to get the project to a working state.
+At the end I had a publicly accessible site that I could say I was proud of and would continue to work on.
+
+While building the project I had ran into some annoyances with creating similar boiler plate code using the Blaze framework included in meteor.
+I had learned of reactive frameworks that existed mainly react and vue.
+Vue seemed to have a more similar syntax to what I'd already had in the project, with a logical component framework that seemed easy to use and the online tutorial was three hours instead of ten for react.
+
+This would also prove to come with some setbacks.
+Vue was not as widely adopted so I ran into some significant hurdles trying to get all the packages and tools I wanted to play nicely.
+I notably silent failures (install load forever) and dependency version conflicts.
+After all this trouble I went looking for more and did a second rewrite moving to vue 3.
 
 # Feature Highlights
 
@@ -189,24 +322,6 @@ I had implemented some of the basic functionality needed for publishing cards in
 plus features related to managing and viewing transactions.
 
 overall tested the waters on what would be needed but I am an individual not in the position of acting as a bank.
-
-## development blocks and push through to publish
-
-Initial rush to work on a project I was motivated by was halted by needing to move cross state.
-project starts and stops were caused because of external concerns such as getting access to an api that was publicly available, streaming data availability, and how could I actually offer virtual card management to allow users to pause and start services from one management page.
-
-Participated in a Devember coding event hosted by the level1tech forum.
-Shared weekly development progress and dialed in my focus to get the project to a working state.
-At the end I had a publicly accessible site that I could say I was proud of and would continue to work on.
-
-While building the project I had ran into some annoyances with creating similar boiler plate code using the Blaze framework included in meteor.
-I had learned of reactive frameworks that existed mainly react and vue.
-Vue seemed to have a more similar syntax to what I'd already had in the project, with a logical component framework that seemed easy to use and the online tutorial was three hours instead of ten for react.
-
-This would also prove to come with some setbacks.
-Vue was not as widely adopted so I ran into some significant hurdles trying to get all the packages and tools I wanted to play nicely.
-I notably silent failures (install load forever) and dependency version conflicts.
-After all this trouble I went looking for more and did a second rewrite moving to vue 3.
 
 # future plans
 
