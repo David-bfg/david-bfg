@@ -157,44 +157,50 @@ The progress made thus far stands as a testament to the power that all software 
 
 ### Re-Evalueate Re-Factor
 
-Beyond all the work I had done to sprint twoards getting What 2 Watchlist hosted publically I had some quality of life features and technical changes I wanted to address.
-The first of those would be to port the frontend from meteor to vue.js.
-I had found myself fustrated with blaze the default frontend framework in meteor.js.
-a lack of reactivity meant there was a lot of boilerplate that had become tedeous.
-I began Looking at the two popular reactive frameworks vue.js and react.js.
-Comparing the two I could see that vue had syntax similar to what I was already used to and a component framework that looked straightforward.
-By contrast the "react is not a framework" design made it much more unstructured, to the point where introductionary content didn't click as easilly.
-Looking for youtube tutorials for each the react videos were 8-10 hours where vue was 3 hours to go over everything.
-That was enough to end my search and chose vue I probably would have gone for react if I'd know how much more ubuiquitous it was for job prospects.
+After completing my sprint to get What 2 Watchlist hosted publicly, all the tasks sitting on the back-burner could now be addressed.
+I recognized several quality-of-life improvements and technical changes that could enhance the project overall.
+One of the foremost changes involved transitioning from the Meteor frontend to Vue.js.
+The default frontend framework in Meteor, Blaze, left me frustrated due to its lack of reactivity, leading to excessive boilerplate code that became tedious to manage.
 
-I had overall made my choice and found myself struggling with dependencies.
-I had some dependency errors poping up for me.
-Solving them took a good amount of investigation because meteor and vue were not as well documented.
-There were example projects that worked until you tried to update and you had very few resources found if you were trying to google the problem.
-Eventually I found the one forum post with a solution.
+Upon evaluating reactive frameworks, I compared Vue.js and React.js.
+Vue's familiar syntax and straightforward component framework resonated with me, especially when compared to React's more unstructured design.
+Vue's concise tutorials and shorter learning curve ultimately solidified my decision to adopt it over React, despite React's broader industry adoption.
 
-I went about porting the UI to vue components, mostly I was converting syntax with many pages now having simpler code for managing inputs and dividing views into components.
-There had been a vue specific UI library called element plus I had passed over before because of its platform specific to vue.
-It had a lot of UI components that I thought were great and had the proper hooks to manage themselves like auto sorting in tables and infinite scroll.
-It had the right amount of good defaults that gave you everything you'd want 90% of the time and the proper hooks to customize it for your liking.
+However, transitioning to Vue was not without its challenges.
+I encountered dependency errors that required thorough investigations to resolve, as documentation for Meteor and Vue integration was limited.
+Showing just how important having a large community is when encountering development hurdles.
+Despite any regrets about not choosing React, I persisted and successfully ported the UI to Vue components.
 
-Modifying the lobbys and decoupling the default accounts signin page were the hard parts.
-the lobby was just a complex section of code so any modification requires a reevaluation of the code.
-The signin was a whole new page that needed to be created but was helped out by an MIT licensed example project that I used as a starter template for the login page.
+In this process, I discovered the Element Plus UI library tailored specifically for Vue.
+Its extensive collection of UI components, along with customizable hooks for seamless integration, proved invaluable in enhancing the app's visual appeal and functionality.
 
-While there were a lot of conveniences from meteor I had begun to start reevaluating if certain components could be modified.
-I'd start to slowly swap things out with the goal of using tools with larger comunities and relying on the meteor platform less.
+Modifying complex sections such as the lobby and decoupling the default account sign-in page posed significant challenges.
+While the lobby's intricate code necessitated careful evaluation with each modification, the sign-in page at least had an MIT-licensed example project to use as a starting point.
 
 #### Quality of life improvements
 
-- Popular media over the years since 2005.
-- UI cleanup: card borders were unappealing, etc.
-- Easier to view where media is streaming in watchlist and media details.
-- backend unit tests.
-- a drawrer for hiding and editing your favorite streaming services you want to compare.
-- Element UI tables for sorting streaming service metrics based on user choice.
+- Popular titles
+  - Curated list of blockbusters
+  - For each year since 2005
+- UI cleanup
+  - Unappealing card borders removed
+  - Color icons for Add-remove action
+  - Icons: for navigation, help and highlighting things.
+  - Anything else with rough edges
+- Improved media details for where to find media streaming.
+- Streaming manager drawer
+  - To easily hide or access of the streaming services you’re interested in comparing.
+- Element UI tables
+  - Sort streaming service metrics based on user choice.
 - Watchlist creation without creating an account
-- cleaning rough edges in UI and porting some UI elements to the new library.
+- porting some UI elements to the new library for code consistency
+- backend unit tests.
+
+As I continued refining the app, I began reassessing certain components of Meteor, gradually reducing reliance on the platform in favor of tools with larger communities.
+I found myself navigating through dependency hell one too many times, encountering libraries that were broken in the latest versions or had conflicting dependencies.
+All of these factors can be frustrating, especially when you're eager to dive into coding and move the project forward.
+
+Then, Vue 3 emerged onto the scene, prompting me to explore its capabilities. In the spirit of learning, I decided to port the UI once again. However, another code rewrite shed light on the possibility that React might have been a more suitable choice in the long run. With its seamless development experience, longstanding development paradigm, and widespread industry adoption, React appears like it would have offered a smoother path forward compared to Vue. Nevertheless, this project serves as a valuable learning experience, allowing me to compare and contrast the trade-offs between these two technologies.
 
 ## development blocks and push through to publish
 
