@@ -50,7 +50,7 @@ Watch a comprehensive feature overview on my [YouTube Playlist](https://www.yout
 
 The first step on the journey to build What 2 Watchlist began with an exploration of the various API options available. There’s a vast amount of movie websites but only a handful of providers for the type of data I was looking for.
 
-Possible API Sources
+<h4>Possible API Sources</h4>
 
 - Reelgood
 - just watch
