@@ -1,8 +1,8 @@
 ---
-title: Covid Project What 2 Watchlist
+title: Covid Project - What 2 Watchlist
 author: david
 date: 2020-04-01 00:00:00 -0500
-last_modified_at: 2024-03-03 00:00:00 -0500
+last_modified_at: 2024-04-13 00:00:00 -0500
 categories: [Problem Solving, Streaming]
 tags: [streaming, watchlist, web development, save money, video guide]
 pin: true
@@ -11,9 +11,7 @@ image:
   alt: What 2 Watchlist Homepage.
 ---
 
-# Navigating The Streaming Explosion: A Covid Project
-
-## Project Motivation
+## Project Motivation: Navigating The Streaming Explosion
 
 As we unwind at the end of each day, the promise of streaming services like Netflix beckons us with a vast array of entertainment options. Yet, beneath the surface, lies a frustration familiar to many of us streaming connoisseurs. Browsing from one category to the next with the same movies showing up again and again. Thus you realize just how limited of a library your looking at. It's a scenario not confined to one platform but pervasive across the streaming landscape.
 
@@ -200,29 +198,71 @@ As I continued refining the app, I began reassessing certain components of Meteo
 I found myself navigating through dependency hell one too many times, encountering libraries that were broken in the latest versions or had conflicting dependencies.
 All of these factors can be frustrating, especially when you're eager to dive into coding and move the project forward.
 
-Then, Vue 3 emerged onto the scene, prompting me to explore its capabilities. In the spirit of learning, I decided to port the UI once again. However, another code rewrite shed light on the possibility that React might have been a more suitable choice in the long run. With its seamless development experience, longstanding development paradigm, and widespread industry adoption, React appears like it would have offered a smoother path forward compared to Vue. Nevertheless, this project serves as a valuable learning experience, allowing me to compare and contrast the trade-offs between these two technologies.
+Then, Vue 3 emerged onto the scene, prompting me to explore its capabilities. In the spirit of learning, I decided to port the UI once again.
+However, another code rewrite shed light on the possibility that React might have been a more suitable choice in the long run.
+With its seamless development experience, longstanding development paradigm, and widespread industry adoption, React appears like it would have offered a smoother path forward compared to Vue.
+Nevertheless, this project serves as a valuable learning experience, allowing me to compare and contrast the trade-offs between these two technologies.
 
-## development blocks and push through to publish
+## Development blocks and push through to publish
 
-    External challenges and interruptions encountered during development.
-    Participation in Devember coding event for focused progress.
-    Transitioning to Vue.js for improved development efficiency.
+### Initial Project Rush
 
-Initial rush to work on a project I was motivated by was halted by needing to move cross state.
-project starts and stops were caused because of external concerns such as getting access to an api that was publicly available, streaming data availability, and how could I actually offer virtual card management to allow users to pause and start services from one management page.
+The inception of this project coincided with a surge of motivation spurred by the initial onset of the Covid-19 pandemic.
+It was a time ripe for focused work, with the opportunity to channel my energy into a project that deeply motivated me.
+Progress was swift, and despite initial concerns about utilizing the Reelgood API, the allure of creating a compelling portfolio piece and the sheer enjoyment of the development process carried me forward.
 
-Participated in a Devember coding event hosted by the level1tech forum.
-Shared weekly development progress and dialed in my focus to get the project to a working state.
-At the end I had a publicly accessible site that I could say I was proud of and would continue to work on.
+### Covid-19 Pandemic Struggles
 
-While building the project I had ran into some annoyances with creating similar boiler plate code using the Blaze framework included in meteor.
-I had learned of reactive frameworks that existed mainly react and vue.
-Vue seemed to have a more similar syntax to what I'd already had in the project, with a logical component framework that seemed easy to use and the online tutorial was three hours instead of ten for react.
+Regrettably, the initial burst of productivity was short-lived.
+As my roommates and I reached the end of our lease, we dispersed to stay with family members, disrupting my development momentum.
+While I'm grateful for my family's support, adjusting to a different environment, marked by what I affectionately term "retirement decline," posed its challenges.
+The perpetual background noise of low quality TV speakers blaring CNN, made it challenging to concentrate on programming.
+Consequently, months stretched into nearly a year before I could muster the determination to resume work on the project.
+Nevertheless, this hiatus wasn't entirely unproductive, as I undertook several side projects to gradually regain momentum.
 
-This would also prove to come with some setbacks.
-Vue was not as widely adopted so I ran into some significant hurdles trying to get all the packages and tools I wanted to play nicely.
-I notably silent failures (install load forever) and dependency version conflicts.
-After all this trouble I went looking for more and did a second rewrite moving to vue 3.
+<h4>Side Projects</h4>
+
+- Constructing a desk
+- Converting a bike into an e-bike and designing/building a battery
+- Upgrading a 3D printer
+- Developing a 3D-printed tool for putting on dog booties
+- Creating 3D-printed arch supports using photogrammetry
+- Installed Home Assistant on my NAS for automated lighting
+
+External concerns also contributed to development pauses, with access to a publicly available API and liability issues surrounding virtual card management services being significant hurdles.
+These interruptions, though lengthy, often faded from memory during periods of productivity, only to resurface as familiar roadblocks.
+Fortunately, breakthroughs came with the expansion of TMDB's API to include streaming data and the emergence of Lithic's public API for virtual card management, providing renewed hope for the project's fruition.
+However, the realization that certain Lithic features were restricted to enterprise customers was a setback, dampening my hopes to reach feature completion but not extinguishing my development enthusiasm.
+
+### Pushing Through
+
+Participating in a Devember coding event hosted by the Level1Tech forum injected a shot of adrenaline into the project.
+The camaraderie and accountability fostered in this environment propelled me forward, enabling me to surmount my anxieties and focus on delivering tangible results.
+The culmination of this effort was a publicly accessible site of which I am immensely proud, serving as a testament to the power of perseverance and determination.
+
+Post-launch, my enthusiasm remained undiminished, fueling efforts to enhance the project further.
+I embarked on a journey to learn about reactive UI frameworks, driven by a desire to leverage whats become the new common industry tool-set to elevate the project's quality.
+The accolades received, including recognition from Wendell at Level1Techs, provided validation for the hard work invested in the project.
+However, the realization dawned that sustained motivation requires long-term results, a domain where my strengths as a developer may not necessarily align with the marketing acumen required to grow the app's user base.
+
+### Reception
+
+Despite efforts to share the app with different groups or create video tutorials showcasing What2Watchlist's features and benefits, user acquisition remained elusive.
+Many people who looked at my app would say, “oh, that's really cool,” but it never translated into them trying it and providing feedback.
+Being privacy-minded, I refrain from injecting any app tracking to monitor user behavior, making it difficult to gauge user engagement accurately.
+It's uncertain if any users other than myself exist, but if any do, they seem to engage only at the surface level and are not motivated enough to seek added benefits with an account.
+Being in a position where I want my efforts to be recognized, ongoing development has been halted until I can attract enough site traffic to drive user sign-ups, necessitating a shift towards basic site maintenance.
+
+### Lessons Learned
+
+In retrospect, while there are lessons learned and areas for improvement, this project has been invaluable in fostering personal growth and resilience.
+It serves as a testament to the importance of dedication and perseverance, demonstrating that if you believe in something, go reach for it;
+with perseverance, you'll find yourself reaching farther than you thought you could have.
+This underscores the importance of stepping beyond one's comfort zone while also acknowledging the limitations of certain skill sets that may not be fully developed.
+While this project was a solo endeavor, the challenges of the Covid-19 pandemic highlighted how the social nature of teamwork breaks down many project roadblocks.
+During solo development, catching the right flow state was like lightning in a bottle, powerful but unable to guide itself perpetually.
+Being social creatures, it's essential to find the right team where you can lean on others, bounce ideas, and collectively create a shared vision.
+ChatGPT is a helpful tool, but it cannot replace the wisdom and synergy that come from a well-functioning team.
 
 # Feature Highlights
 
