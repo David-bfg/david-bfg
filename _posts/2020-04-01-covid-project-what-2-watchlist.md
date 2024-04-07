@@ -84,7 +84,7 @@ With its robust user-accounts package and JavaScript-centric architecture, Meteo
 
 Utilizing Meteor.js and a reliable data source from Reelgood, I swiftly laid the groundwork for the application's core functionalities. Within a short span, users could join the platform, create personalized watchlists, and seamlessly browse streaming availability. An example of what can be achieved when proficiency meets powerful tools.
 
-### Going From Prototype To Published
+### Going From Prototype to Published
 
 However, as the project progressed, the need for a more robust and compliant API became apparent. Transitioning to TMDB not only ensured adherence to legal standards but had also broadened the application's functionality. With TMDB having similar but well documented data, I now had easy access to the global availability of streaming data. Now users could browse through the global market for streaming content. Know not just what was streaming but where it was streaming. The integration of TMDB represented a significant milestone, unlocking new possibilities and broadening the app's appeal.
 
@@ -99,7 +99,7 @@ I had to make sure the backend server code was being executed asynchronously and
 Nonetheless, perseverance, a whiteboard and innovative (hacky) problem-solving ultimately led to the successful realization of this feature, but the overall feature complexity would have me revisiting the code base again and again later on down the line.
 Overall this gave users a great way to engage with the app by quickly comparing movie interests with friends.
 
-#### The Road To Virtual Cards
+#### The Road to Virtual Cards
 
 As the project approached its final stages, attention turned towards deployment readiness and the potential/hurdles of monetization through virtual card features.
 After sharing the app with a select group and doing some research, I discovered Privacy.com was rebranding to Lithic.
@@ -175,7 +175,7 @@ Its extensive collection of UI components, along with customizable hooks for sea
 Modifying complex sections such as the lobby and decoupling the default account sign-in page posed significant challenges.
 While the lobby's intricate code necessitated careful evaluation with each modification, the sign-in page at least had an MIT-licensed example project to use as a starting point.
 
-#### Quality of life improvements
+#### Quality of Life Improvements
 
 - Popular titles
   - Curated list of blockbusters
@@ -203,7 +203,7 @@ However, another code rewrite shed light on the possibility that React might hav
 With its seamless development experience, longstanding development paradigm, and widespread industry adoption, React appears like it would have offered a smoother path forward compared to Vue.
 Nevertheless, this project serves as a valuable learning experience, allowing me to compare and contrast the trade-offs between these two technologies.
 
-## Development blocks and push through to publish
+## Development Blocks and Push Through to Publish
 
 ### Initial Project Rush
 
@@ -264,11 +264,11 @@ During solo development, catching the right flow state was like lightning in a b
 Being social creatures, it's essential to find the right team where you can lean on others, bounce ideas, and collectively create a shared vision.
 ChatGPT is a helpful tool, but it cannot replace the wisdom and synergy that come from a well-functioning team.
 
-# Feature Highlights
+## Feature Highlights
 
-### search
+### Home - Search
 
-#### Basic Start
+Basic Start
 
 I started with making a simple page with just a search input and a list of results. it was just the basics white background, black text, with an input and button.
 the search had no pagination it only responded with the first page of results but did have a quick response/auto-complete that showed quickly before the full page results were requested.
@@ -277,7 +277,7 @@ The search initially had a 3 character limit as a hack to implement debounce. I 
 
 It was not much but Meteor was feature rich enough that I had a reactive search bar (auto-updated search response.)
 
-#### refined state
+refined state
 
 Long term I added and learned much more about different UI components.
 
@@ -290,7 +290,7 @@ Icons, buttons and labels
 Media Poster Images
 : added poster images to represent a search result. Using CDN from TMDB API for responsiveness and to lessen server load.
 
-### users & Watchlist
+### Users and Watchlists
 
 used meteor library for accounts to get user functionality setup in app.
 now a user can build their watchlist and we will track the streaming data of the media in your watchlist.
@@ -304,7 +304,7 @@ after searching google and reading documentation I came upon this syntax for add
 {$set: {['userProfile.watchlist.' + id]: imdbNum}}
 ```
 
-#### refined state
+refined state
 
 long term I added the ability to build a watchlist locally before you create an account.
 this went along with revamping the builtin accounts and making a dedicated page for user sign-up.
@@ -314,13 +314,13 @@ along with all this I implemented SMTP (e-mail) on my domain.
 I had to chose between rolling my own or finding a good service and from the looks of it you'd go to spam if you weren't using a service.
 Eventually I found a quality service that was most importantly free 'Zoho Mail.'
 
-### media details
+### Media Details
 
 This stated out as just a page to view the poster and review more data relating to the movie or show.
 
 it Is still simple but has been given a coat of paint (CSS styling) and details about where you can stream the piece of media you're interested in. The streaming is separated by where it is available for free or with a subscription service and in what region that streaming service is offering it.
 
-### watchlist - browsing
+### Watchlist - Browsing
 
 transform from basic list of media and radio selector for streaming services to a similarly simple but prettier view for browsing between streaming services.
 An option to select the region you are streaming from is the only new functionality.
@@ -328,7 +328,7 @@ An option to select the region you are streaming from is the only new functional
 other than the UI improvements there has been a rework of how media lists are shown.
 browsing through a selection of media had been reworked into a reusable component with infinite scroll for auto pagination.
 
-### movie night with lobby
+### Movie Night Lobby
 
 This was a bonus feature that I ended up focusing on earlier than expected.
 while I would have liked having privacy.com like feature integration, There's a lot of scary words around liability when you look into APIs with the ability to programmatically managing other peoples payments.
@@ -351,7 +351,7 @@ That has often been convenient, but I found that the way I though synchronizatio
 it had me implementing something that was a painful hodgepodge but at least it works and I can finally be done.
 that was true always true till the next little rewrite.
 
-### compare and rotate through streaming services
+### Compare and Rotate Through Streaming Services
 
 for my plan to implement privacy.com like functionality to help people jump in and out of a subscription quickly by just starting or pausing payments required some system for management.
 for that I had created a streaming manager feature.
@@ -360,7 +360,7 @@ you'd select the streaming services you'd consider using and manage who you'd be
 we show a table of metrics related to the popularity, size and average rating.
 with a means to browse through your watchlist matches in each services library.
 
-### virtual cards to auto swap streaming subscriptions
+### Virtual Cards to Auto Swap Streaming Subscriptions
 
 I had created a sandbox feature for allowing users to create virtual cards.
 I had found an spin-off or off-shot of privacy.com, lithic is a public API for publishing and managing virtual cards.
@@ -369,9 +369,9 @@ plus features related to managing and viewing transactions.
 
 overall tested the waters on what would be needed but I am an individual not in the position of acting as a bank.
 
-# future plans
+# The Future
 
-## tentative plans for future development
+## Tentative Plans for Future Development
 
 Hoping to create a companion app to manage users virtual cards locally.
 The blocks are knowing that I don't currently have an active user-base other than myself.
@@ -384,4 +384,4 @@ so people might be mislead by a show saying it is available for free or on a str
 These are all things I need to be motivated to to and until I have actual users I'm just making this for myself.
 Currently it is working good enough for me.
 
-# Conclusion
+## Conclusion
