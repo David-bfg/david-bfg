@@ -222,11 +222,11 @@ Nevertheless, this hiatus wasn't entirely unproductive, as I undertook several s
 
 <h4>Side Projects</h4>
 
-- Constructing a desk
+- [Constructing a desk](/posts/diy-desk-surface/)
 - Converting a bike into an e-bike and designing/building a battery
-- Upgrading a 3D printer
-- Developing a 3D-printed tool for putting on dog booties
-- Creating 3D-printed arch supports using photogrammetry
+- [Upgrading a 3D printer](/posts/repairing-a-free-3d-printer/)
+- Developing a 3D-printed [tool for putting on dog booties](/posts/dog-bootie-helper-tool/)
+- Creating 3D-printed [arch supports using photogrammetry](/posts/photogrammetry-arch-support/)
 - Installed Home Assistant on my NAS for automated lighting
 
 External concerns also contributed to development pauses, with access to a publicly available API and liability issues surrounding virtual card management services being significant hurdles.
