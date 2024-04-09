@@ -52,12 +52,12 @@ The first step on the journey to build What 2 Watchlist began with an exploratio
 
 <h4>Possible API Sources</h4>
 
-- Reelgood
-- just watch
-- TV Guide
-- IMDB
-- The Open Movie Database
-- TMDB
+- [Reelgood](https://reelgood.com/)
+- [just watch](https://www.justwatch.com/)
+- [TV Guide](https://www.tvguide.com/)
+- [IMDB](https://www.imdb.com/)
+- [The Open Movie Database](https://www.omdbapi.com/)
+- [TMDB](https://www.themoviedb.org/)
 
 While all of them had the basics, I needed something that had data on streaming availability and a publicly accessible API.
 
@@ -77,6 +77,9 @@ As a solo developer, the efficiency and effectiveness of these choices significa
 For me, prioritizing tools that facilitate rapid development without compromising functionality was essential, allowing me to focus on actual implementation rather than getting bogged down in tedious tasks.
 
 ### The Base Tool-Set
+
+![light mode only](/assets/img/W2W-Base-Tools-Light.png){: .light }
+![dark mode only](/assets/img/W2W-Base-Tools-Dark.png){: .dark }
 
 In pursuit of these goals, I turned to the familiar landscape of the npm and Node.js ecosystem. Harnessing my familiarity with JavaScript, I initially opted for Meteor.js, a versatile framework renowned for its expediency in crafting Progressive Web Applications (PWAs).
 Meteor.js offered an integrated environment that streamlined development, boasting a publish-subscribe model that seamlessly bridged the gap between client and server.
@@ -114,6 +117,8 @@ Envisioning the manager acting as a monthly value checkup where users would chos
 Thus, focus shifted towards facilitating informed decision-making on streaming services.
 This involved curating a selection of popular streaming services, gathering data on pricing and available plans, and developing tools for comparing and evaluating each service's offerings.
 
+![Desktop View](/assets/img/Card-Manager.png){: width="720" height="249" .w-50 .right}
+
 The ultimate goal was to empower users to effortlessly manage and optimize their subscription choices based on their individual viewing preferences.
 With the groundwork laid for subscription management services, the path towards integrating Lithic's virtual card API for seamlessly subscription hopping could now start to crystallize.
 
@@ -127,6 +132,8 @@ As a result, while a proof of concept was achieved, reaching a full implementati
 Nonetheless, there is still a sense of excitement surrounding this feature, leaving open the possibility of revisiting it to enhance the user experience and monetize this project.
 
 #### Revamping UI Experience
+
+![Desktop View](/assets/img/UI-Overhaul.png){: width="452" height="112" .w-50 .right}
 
 Moving beyond functionality, my attention now directed towards enhancing the application's user interface and experience.
 Recognizing the lack of visual appeal in a white background and interactive text, I would need a complete UI overhaul.
@@ -159,6 +166,9 @@ After completing my sprint to get What 2 Watchlist hosted publicly, all the task
 I recognized several quality-of-life improvements and technical changes that could enhance the project overall.
 One of the foremost changes involved transitioning from the Meteor frontend to Vue.js.
 The default frontend framework in Meteor, Blaze, left me frustrated due to its lack of reactivity, leading to excessive boilerplate code that became tedious to manage.
+
+![light mode only](/assets/img/Vue-And-Element-Light.png){: .light width="505" height="64" }
+![dark mode only](/assets/img/Vue-And-Element-Dark.png){: .dark width="505" height="64" }
 
 Upon evaluating reactive frameworks, I compared Vue.js and React.js.
 Vue's familiar syntax and straightforward component framework resonated with me, especially when compared to React's more unstructured design.
@@ -236,7 +246,7 @@ However, the realization that certain Lithic features were restricted to enterpr
 
 ### Pushing Through
 
-Participating in a Devember coding event hosted by the Level1Tech forum injected a shot of adrenaline into the project.
+Participating in a Devember coding event hosted by the [Level1Tech forum](https://forum.level1techs.com/t/devember-2021-what-to-watchlist/177828) injected a shot of adrenaline into the project.
 The camaraderie and accountability fostered in this environment propelled me forward, enabling me to surmount my anxieties and focus on delivering tangible results.
 The culmination of this effort was a publicly accessible site of which I am immensely proud, serving as a testament to the power of perseverance and determination.
 
