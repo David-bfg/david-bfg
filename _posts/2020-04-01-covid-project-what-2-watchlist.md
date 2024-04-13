@@ -278,27 +278,34 @@ ChatGPT is a helpful tool, but it cannot replace the wisdom and synergy that com
 
 ### Home - Search
 
-Basic Start
+One of the first features was the search bar, Initially button-activated it was quickly replaced with an event driven implementation that would execute when typing in the search field.
+That bare bones first attempt at reactivity would trigger from the first keypress to the last, initiating successive search request that updated the screen faster than it could be consumed.
+To address this, a character limit of three was implemented with a makeshift debounce to prevent premature searches and improving usability.
+Eventually I ran into the right tutorial to learn the name for this feature was debounce and I found the built-in functions to simplify my code.
 
-I started with making a simple page with just a search input and a list of results. it was just the basics white background, black text, with an input and button.
-the search had no pagination it only responded with the first page of results but did have a quick response/auto-complete that showed quickly before the full page results were requested.
+Media lists form the backbone of any watchlist/streaming app, thus their development was a focal point.
+Initially, separate implementations were utilized, leading to redundant code.
+As the project expanded, a consolidated approach emerged, with a robust media list component supporting various data sourcing methods.
+Omiting pagination early on resulted in limited search results and a notable lagg arising from loading large watchlists.
+After discovering the Element-Plus library's infinite-scroll feature;
+I knew it would be an elegant solution to effortlessly add pagination into the existing code base, by seamlessly loading additional results as users scrolled.
 
-The search initially had a 3 character limit as a hack to implement debounce. I had been annoyed by seeing the same early results flash multiple times. They were not helpful so I found a way to block them. eventually my google-fu found debounce and I got to learn about debounce it.
+The introduction of cards transformed media lists from basic HTML UL tags into visually appealing components.
+Each card showcased a movie or show poster along with essential details, such as release year, rating, and media type.
+Including new icon based buttons to simplify watchlist management, with a green plus for add and a red minus for remove.
+Using TMDB’s CDN all the poster images could point directly to the source, relieving any development concerns.
 
-It was not much but Meteor was feature rich enough that I had a reactive search bar (auto-updated search response.)
+The popular media feature aimed to streamline watchlist creation by offering curated lists of top titles from recent years.
+Using TMDB, I initiated queries for popular titles from 2005 to the present, targeting the highest-rated and most-viewed content.
+However, I soon encountered some unexpected results.
+One instance involved an obscure war documentary, boosted to the top by a single perfect rating, skewing the results.
+Another peculiar case was a Japanese movie titled "semen demon," where it looked to be popular because of a shocking title and half naked woman on the cover.
+Reminding me of something a google engineer said people click on boobs and I’ve seen the data to back it up.
+The low rating and small amount of reviews made me certain that this was an outlier that needed to be removed.
+By implementing minimum thresholds for user engagement, I was able to filter out such outliers to get a curated selection of high-quality content for building a watchlist.
 
-refined state
-
-Long term I added and learned much more about different UI components.
-
-cards
-: to have a template for showing details for media and auto-adjust the list of search results to fit the page width.
-
-Icons, buttons and labels
-: added different icons to signal information to the user IE. if a card is a movie, a tv show or an actor. Icon buttons were used to signify if you were adding or removing media from your watchlist.
-
-Media Poster Images
-: added poster images to represent a search result. Using CDN from TMDB API for responsiveness and to lessen server load.
+The addition of an introductory video on the homepage served as a user-friendly guide to What2Watchlist and its features.
+This multimedia approach, coupled with informative text, would ensure that users had the chance to get well-acquainted with the app's functionalities from the outset.
 
 ### Users and Watchlists
 
