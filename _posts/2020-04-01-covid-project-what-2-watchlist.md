@@ -278,6 +278,8 @@ ChatGPT is a helpful tool, but it cannot replace the wisdom and synergy that com
 
 ### Home - Search
 
+![Desktop View](/assets/img/W2W-Home-View.jpg){: width="1272" height="720" }
+
 One of the first features was the search bar, Initially button-activated it was quickly replaced with an event driven implementation that would execute when typing in the search field.
 That bare bones first attempt at reactivity would trigger from the first keypress to the last, initiating successive search request that updated the screen faster than it could be consumed.
 To address this, a character limit of three was implemented with a makeshift debounce to prevent premature searches and improving usability.
@@ -309,27 +311,29 @@ This multimedia approach, coupled with informative text, would ensure that users
 
 ### Users and Watchlists
 
-used meteor library for accounts to get user functionality setup in app.
-now a user can build their watchlist and we will track the streaming data of the media in your watchlist.
+One of the primary reasons for choosing Meteor initially was its seamless user account creation functionality.
+Knowing not to roll my own security, I was happy to use a robust authentication systems that was directly supported by the Meteor project team.
+Setting up user accounts was a breeze, requiring minimal additional effort beyond importing and implementing the accounts package.
+With this in place, I could focus on features for tracking user watchlists and configuring SMTP for email signups.
 
-worked on some mongo queries to store a watchlist with each user.
-I Specifically wanted to store the users watchlist as a set or map data structure where an id lookup would let you know if a movie is in the watchlist.
-This was a non-standard use case that required a way to use a dynamic key in the mongo query syntax.
-after searching google and reading documentation I came upon this syntax for adding a variable to a query path.
+I turned to focus my efforts on developing the necessary MongoDB queries to effectively store each user's watchlist.
+My goal was to store watchlists as a set or map data structure, facilitating efficient movie lookup within the watchlist.
+This required a non-standard use case, necessitating dynamic key insertion in the MongoDB query syntax.
+After searching through forms and scouring MongoDB’s documentation, I discovered a suitable syntax for incorporating variables into query paths:
 
 ```javascript
 {$set: {['userProfile.watchlist.' + id]: imdbNum}}
 ```
 
-refined state
+Once the basics were in place, SMTP setup was the only thing remaining before the accounts were release ready.
+Initially considering self-hosting an email server for my domain to cut costs, I was deterred upon learning that unverified servers often end up in the spam folder.
+Fortunately, I found a fitting solution in Zoho Mail, a reputable service offering free email hosting.
 
-long term I added the ability to build a watchlist locally before you create an account.
-this went along with revamping the builtin accounts and making a dedicated page for user sign-up.
-You'd have an email attached to your account with all the basic features of password and password recovery.
-You'd also have the ability to import your local watchlist to your new account.
-along with all this I implemented SMTP (e-mail) on my domain.
-I had to chose between rolling my own or finding a good service and from the looks of it you'd go to spam if you weren't using a service.
-Eventually I found a quality service that was most importantly free 'Zoho Mail.'
+While these steps ensured stability for the app’s release, some quality-of-life improvements were implemented post-launch:
+
+- Watchlists could be built locally and transferred to the server when you’re ready to make an account
+- Creation of a dedicated page for user login and signup services
+- Gradual transition away from reliance on some of the default Meteor accounts library features
 
 ### Media Details
 
