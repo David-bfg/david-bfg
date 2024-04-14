@@ -337,9 +337,15 @@ While these steps ensured stability for the app’s release, some quality-of-lif
 
 ### Media Details
 
-This stated out as just a page to view the poster and review more data relating to the movie or show.
+![Desktop View](/assets/img/Seperated-Streaming-Types.png){: width="331" height="396" .w-50 .right}
 
-it Is still simple but has been given a coat of paint (CSS styling) and details about where you can stream the piece of media you're interested in. The streaming is separated by where it is available for free or with a subscription service and in what region that streaming service is offering it.
+From its inception, the design philosophy for this page has remained focused on simplicity.
+Initially intended for users to view the poster artwork and browse through details pertaining to a movie or show.
+It wasn’t any more than needed, just checking the box to say, I recognize it’s a necessary component for an app centered around films and TV-shows.
+
+The commitment to simplicity persists, even after receiving some styling upgrades from the inclusion of a new UI library and introducing streaming availability details.
+This new feature distinguishes between streaming services, indicating weather the content is accessible for free or requires a subscription,
+while also specifying the region where the streaming service is offering this title.
 
 ### Watchlist - Browsing
 
