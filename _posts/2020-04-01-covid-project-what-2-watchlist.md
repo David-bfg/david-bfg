@@ -193,16 +193,16 @@ While the lobby's intricate code necessitated careful evaluation with each modif
 - UI cleanup
   - Unappealing card borders removed
   - Color icons for Add-remove action
-  - Icons: for navigation, help and highlighting things.
+  - Icons: for navigation, help and highlighting things
   - Anything else with rough edges
-- Improved media details for where to find media streaming.
+- Improved media details for where to find media streaming
 - Streaming manager drawer
-  - To easily hide or access of the streaming services you’re interested in comparing.
+  - To easily hide or access of the streaming services you’re interested in comparing
 - Element UI tables
-  - Sort streaming service metrics based on user choice.
+  - Sort streaming service metrics based on user choice
 - Watchlist creation without creating an account
 - porting some UI elements to the new library for code consistency
-- backend unit tests.
+- backend unit tests
 
 As I continued refining the app, I began reassessing certain components of Meteor, gradually reducing reliance on the platform in favor of tools with larger communities.
 I found myself navigating through dependency hell one too many times, encountering libraries that were broken in the latest versions or had conflicting dependencies.
@@ -349,11 +349,19 @@ while also specifying the region where the streaming service is offering this ti
 
 ### Watchlist - Browsing
 
-transform from basic list of media and radio selector for streaming services to a similarly simple but prettier view for browsing between streaming services.
-An option to select the region you are streaming from is the only new functionality.
+The watchlist page has remained a cornerstone feature since its inception, with its core functionality unchanged. However, it now possesses the added capability of allowing users to specify their streaming region. Serving as the basis for creating a watchlist, the watchlist browser puts streaming knowledge at your fingertips. By keeping track of what you’re looking forward to watching, you can swiftly browse through where you can find it. Just select a streaming service to see how it aligns with your viewing preferences.
 
-other than the UI improvements there has been a rework of how media lists are shown.
-browsing through a selection of media had been reworked into a reusable component with infinite scroll for auto pagination.
+While UI enhancements were applied across all pages, the most substantial changes occurred behind the scenes. The watchlist page evolved in tandem with media lists, a concept introduced in the home-search feature. Its evolution was not merely about displaying the watchlist; it had to dynamically return a subset of content based on the selected service and specified region. Accommodating additional features such as a custom streaming service selector, service metrics, and seamless navigation between various lists required flexible design choices.
+
+To meet these diverse needs, I started by decoupling the logic for processing a watchlist by removing it from the view component and making it part of its own robust library-package. This package handles the two main questions we have about a watchlist: what streaming services offer these titles and what titles are available on a streaming service. The function interfaces had a significant amount of configurable options that would be able to satisfy most needs and easily extend functionality for any one-off requirements. Much of this flexibility was achieved by having the UI component pass a MongoDB query that would allow the calling function to define whatever granularity needed for their watchlist and keep any specific concerns within the appropriate component. With all this, the library has done well to adhere to the goal of low coupling and high cohesion in pursuit of maintainable code.
+
+During mobile app testing, a significant performance lag on the watchlist page was identified, which had gone unnoticed on desktop. As the watchlist expanded, the lag became more pronounced. Using browser profiling tools, I pinpointed this down to an inefficient use of the mini-mongo instance. I was going through each streaming service and finding what watchlist titles matched up when I should have been going the other way to find all the streaming services after processing each title. This optimization brought the complexity down to O(n) linear time resulting in a substantial 25x performance speedup, restoring the snappy experience expected from a Progressive Web App (PWA).
+
+<h4>My takeaway from the fix was</h4>
+
+- I knew better, but the code was convenient to just call some other library
+- Some libraries can be really slow, there would have been a definite speedup by keeping the same inefficient implementation without calling mini-mongo
+- Wishful thinking that some package is efficiency magic behind the scenes never works; they, like you, work on the concepts of maintainability and reliability, not magic
 
 ### Movie Night Lobby
 
