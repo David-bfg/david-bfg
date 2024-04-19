@@ -311,6 +311,8 @@ This multimedia approach, coupled with informative text, would ensure that users
 
 ### Users and Watchlists
 
+![Desktop View](/assets/img/W2W-Login.png){: width="315" height="291" .w-50 .right}
+
 One of the primary reasons for choosing Meteor initially was its seamless user account creation functionality.
 Knowing not to roll my own security, I was happy to use a robust authentication systems that was directly supported by the Meteor project team.
 Setting up user accounts was a breeze, requiring minimal additional effort beyond importing and implementing the accounts package.
