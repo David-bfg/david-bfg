@@ -420,14 +420,18 @@ I initially thought that this type of problem would normally be addressed in an 
 However, I chose to work with the tools at hand instead.
 I only discovered the MongoDB equivalent features later, so their implementation will be deferred until the app's user base grows enough to justify the effort.
 
-### Compare and Rotate Through Streaming Services
+### Streaming Manager
 
-for my plan to implement privacy.com like functionality to help people jump in and out of a subscription quickly by just starting or pausing payments required some system for management.
-for that I had created a streaming manager feature.
-you'd select the streaming services you'd consider using and manage who you'd be subscribing to from one month to the next.
+![Desktop View](/assets/img/W2W-Streaming-Manager.png){: width="1446" height="461" }
 
-we show a table of metrics related to the popularity, size and average rating.
-with a means to browse through your watchlist matches in each services library.
+The Streaming Manager is designed to help you track your existing streaming subscriptions and guide you in selecting the right services for your needs.
+While it shares similarities with the watchlist page, its primary focus is on the most popular streaming services.
+You can choose the services you're interested in and delve deeper by comparing their catalogs in terms of size, popularity, and rankings.
+
+The goal is to keep the experience simple, providing functionality to track users' subscriptions with the potential to integrate privacy.com-like features.
+Each month, the Streaming Manager will email you a review of how each service is stacking up against the competition, helping you stay informed.
+Even without additional integrations, the manager can assist you in switching between subscriptions efficiently, allowing you to watch your favorite shows and then switch to a different service the following month.
+With the average person holding around 4.5 subscriptions, offering streamlined management could potentially save millions for consumers who only need a particular service for a limited time to catch up on specific shows.
 
 ### Virtual Cards to Auto Swap Streaming Subscriptions
 
