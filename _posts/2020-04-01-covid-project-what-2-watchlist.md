@@ -392,7 +392,7 @@ Once your friend group has assembled in a lobby, you’ll explore through titles
 Just like the watchlist page, you can refine your choices to see whats available for free or on a service somebody's subscribed to.
 
 Initially conceived as an optional bonus feature, lobbies quickly became a vital means to keep me focused on the app as some other features were dealing with some concerning roadblocks.
-(refer to Development Blocks and Push Through to Publish.)
+(refer to [Development Blocks and Push Through to Publish.](/posts/covid-project-what-2-watchlist/#development-blocks-and-push-through-to-publish))
 The need for state synchronization across multiple users presented a welcome challenge, with a new set of concerns.
 
 Inspired by the concept of game lobbies, where someone would open a lobby with their friends, be given a certain amount of time to get things in order and once everyone has readied up your party is set to embark.
