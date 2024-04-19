@@ -384,26 +384,39 @@ This optimization brought the complexity down to O(n) linear time resulting in a
 
 ### Movie Night Lobby
 
-This was a bonus feature that I ended up focusing on earlier than expected.
-while I would have liked having privacy.com like feature integration, There's a lot of scary words around liability when you look into APIs with the ability to programmatically managing other peoples payments.
-thus being unsure about taking on bank like liability I worked on making a lobby system finding what movie to watch.
+![Desktop View](/assets/img/W2W-Movie-Night-Lobby.jpg){: width="1252" height="589" }
 
-The overall idea is that you could easily check between users to find matching media.
-so when your buddies are looking to have a movie night you can easily find something everybody is interested in.
-The process would start out by creating a lobby and sharing the link with your friends.
-once everyone has entered ready up and you will be able to browse through the media matches in your group.
-browse based on the number of friends that have matching watchlists.
-from that set you will be able to browse in the same manner you do for a watchlist.
-Say you're all relying on Jeff's Netflix account you can filter based on the available streaming services.
+The movie night lobby is for friends to gather and discover shared interests within their watchlists.
+Designed to offer a structured approach to choosing what to watch, with a much better approach than just opening up Netflix and aimlessly scrolling until people agree on something.
+Once your friend group has assembled in a lobby, you’ll explore through titles based on how many friends are interested.
+Just like the watchlist page, you can refine your choices to see whats available for free or on a service somebody's subscribed to.
 
-Functionally this had a lot of complexity added from managing state between multiple users.
-I found myself doing a lot of whiteboard work to map out the state machine for how state was syncing between multiple users.
-I'd often get to a point where things seemed good hoping I didn't need to touch things again and some rework has me returning reevaluating all my code until I'd end up rewriting a significant portion.
-the complexity of managing state between users has a lot of moving parts.
-the Meteor framework has a lot of tools for syncing data models to the users view.
-That has often been convenient, but I found that the way I though synchronization between users should work and the subscription/publish paradigm used in meteor.
-it had me implementing something that was a painful hodgepodge but at least it works and I can finally be done.
-that was true always true till the next little rewrite.
+Initially conceived as an optional bonus feature, lobbies quickly became a vital means to keep me focused on the app as some other features were dealing with some concerning roadblocks.
+(refer to Development Blocks and Push Through to Publish.)
+The need for state synchronization across multiple users presented a welcome challenge, with a new set of concerns.
+
+Inspired by the concept of game lobbies, where someone would open a lobby with their friends, be given a certain amount of time to get things in order and once everyone has readied up your party is set to embark.
+Much of the complexity in this feature stems from all the state tracking before the party is created.
+
+<h4>Task the server has to manage:</h4>
+- adding new people to a waiting lobby and preventing them from joining an active lobby
+- handle user disconnect or logout by verifying user has an active session
+- cleaning old or abandoned lobbies
+- tracking the time remaining
+- limiting the lobby size
+- then once all members have readied up the lobby is now active and the state freezes meaning the party is set to begin
+
+Despite its engaging nature, lobby development presented its fair share of challenges.
+The complexity was far above average and always had you checking if you’d covered every edge case.
+For that reason I consistently hoped I could set it and forget it;
+unfortunately I had to revisit the lobby code three more times due to frontend rewrites.
+Each iteration required a comprehensive review of the system's intricate state transitions, often involving a whiteboard and finite state automata diagrams to ensure all scenarios were covered.
+
+My familiarity with Meteor's publish/subscribe model for data synchronization didn't fully prepare me for implementing server-side synchronization.
+To mitigate race conditions, I developed semaphore logic that partially relied on single-core server operation to ensure lobby concurrency.
+I initially thought that this type of problem would normally be addressed in an SQL database, which benefits from ACID (Atomic, Consistent, Isolated, and Durable) principles, using triggers, procedures, and functions to manage such challenges.
+However, I chose to work with the tools at hand instead.
+I only discovered the MongoDB equivalent features later, so their implementation will be deferred until the app's user base grows enough to justify the effort.
 
 ### Compare and Rotate Through Streaming Services
 
