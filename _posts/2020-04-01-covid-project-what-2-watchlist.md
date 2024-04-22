@@ -433,14 +433,27 @@ Each month, the Streaming Manager will email you a review of how each service is
 Even without additional integrations, the manager can assist you in switching between subscriptions efficiently, allowing you to watch your favorite shows and then switch to a different service the following month.
 With the average person holding around 4.5 subscriptions, offering streamlined management could potentially save millions for consumers who only need a particular service for a limited time to catch up on specific shows.
 
-### Virtual Cards to Auto Swap Streaming Subscriptions
+### Auto Hop Streaming Subscriptions
 
-I had created a sandbox feature for allowing users to create virtual cards.
-I had found an spin-off or off-shot of privacy.com, lithic is a public API for publishing and managing virtual cards.
-I had implemented some of the basic functionality needed for publishing cards in someones else's name.
-plus features related to managing and viewing transactions.
+![Desktop View](/assets/img/Card-Manager.png){: width="720" height="249" .w-50 .right}
 
-overall tested the waters on what would be needed but I am an individual not in the position of acting as a bank.
+From the outset, I aimed to create features comparable to those of Privacy.com, offering users an easy way to start and pause their streaming subscriptions.
+I recalled reading an article about Netflix stopping charges for users who had been inactive for 12 months, presenting Netflix as a "good guy" company.
+This got me thinking about how different services should work and how they often operate against user interests.
+
+Ideally, users should be able to pay for a month and pause charges if they decide to take a break at the end of the period.
+However, the only option for this is paying for a month and immediately canceling the subscription, resuming payments whenever desired.
+Unfortunately, no company voluntarily offers this functionality.
+Cases like Amazon's 'Project Iliad' show how profitable it is for companies to complicate their cancellation process, as their interests often oppose their users.
+My goal is to bring users one step closer to having full control over their subscriptions.
+
+After establishing the foundation of the application, I began experimenting with Privacy.com/Lithic sandbox to develop virtual card management features.
+This allowed me to enable functions such as signing up users for card services, creating virtual cards specific to a service, and pausing/starting payments to facilitate automatic subscription swapping.
+While not perfect, the goal was to demonstrate that such capabilities were possible.
+
+Currently, this feature is not available in the app due to liability concerns, as managing others' finances carries higher stakes similar to those faced by banks.
+However, I remain committed to the possibility of offering this in the future, likely with a slow rollout to ensure all aspects are handled appropriately.
+This implementation will be revisited once the app's user base grows enough to warrant the effort and users express interest in signing up for it, providing a tangible payoff that justifies the associated risks.
 
 # The Future
 
