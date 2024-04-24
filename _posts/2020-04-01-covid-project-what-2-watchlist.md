@@ -457,17 +457,39 @@ This implementation will be revisited once the app's user base grows enough to w
 
 # The Future
 
-## Tentative Plans for Future Development
+## Plans for Future Development
 
-Hoping to create a companion app to manage users virtual cards locally.
-The blocks are knowing that I don't currently have an active user-base other than myself.
+The application is currently in good working order, but there is always room for improvement.
+I plan to develop a [companion app](https://github.com/David-bfg/virtual-card-manager) that will allow users to manage their virtual cards locally, providing secure payment management and eliminating liability concerns.
+This mobile app will handle all financial transactions locally and utilize the user's own Privacy.com account API key to manage virtual cards.
+It will integrate with apps like What2Watchlist to oversee users' favorite or most valuable services, making it easy to switch between subscriptions by controlling when to start and stop payments.
 
-There is a lot more that could be tracked for TV shows many services are only offering the first episode of a season free of have a handful of episodes from a show.
-I'd like to be able to better convey this.
-currently the API for streaming data is just a yes or no there is no granularity.
-so people might be mislead by a show saying it is available for free or on a streaming service.
+Potential Enhancements:
 
-These are all things I need to be motivated to to and until I have actual users I'm just making this for myself.
-Currently it is working good enough for me.
+- Trakt TV Integration
+  - Trakt TV connects with various media apps
+  - It helps track viewing progress, including episodes watched
+- Expanded Watchlist Functionality
+  - Track seasons and episodes watched
+  - Notify users of new seasons
+  - Provide disclaimers regarding the availability of shows and free content:
+    - Some shows may offer only the first episode of a season for free
+    - Services may only provide a limited selection of episodes
+    - The underlying API only indicates that something exists, not its size
+  - Alternatively, gather and summarize data from other sources to show the percentage of a season available for streaming
+- Watchlist Filtering
+  - Provide filtering options to display only movies or TV shows in the results
+
+I recently spoke with a UX specialist at a conference to gather feedback on reducing user friction in the app.
+The feedback was positive and constructive, including actionable design changes to guide users toward creating a Watchlist.
+Doing so will allow users to experience all the great features of What2Watchlist more easily.
+
+These plans are currently on hold.
+They require the right motivation to implement, and until I have a larger user base, my primary focus remains on meeting my own needs.
+The application serves its purpose well and stands as a solid showcase of my skills.
+
+I hope to revisit the project soon to incorporate new UX design improvements and to ramp up marketing efforts.
+I aim to share the app with a larger audience, such as on Reddit, to reach beyond my social circle and test the app's appeal to a broader user base.
+Hopefully, this approach will allow the app to gain momentum and attract a reasonable number of users.
 
 ## Conclusion
