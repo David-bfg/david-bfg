@@ -2,7 +2,7 @@
 title: Covid Project - What 2 Watchlist
 author: david
 date: 2020-04-01 00:00:00 -0500
-last_modified_at: 2024-04-13 00:00:00 -0500
+last_modified_at: 2024-04-27 00:00:00 -0500
 categories: [Problem Solving, Streaming]
 tags: [streaming, watchlist, web development, save money, video guide]
 pin: true
@@ -493,3 +493,25 @@ I aim to share the app with a larger audience, such as on Reddit, to reach beyon
 Hopefully, this approach will allow the app to gain momentum and attract a reasonable number of users.
 
 ## Conclusion
+
+The journey of developing What2Watchlist has been an exploration of both the highs and lows of solo project work, emphasizing the importance of persistence and resilience.
+Taking the time to pursue personal projects is an intrinsically enriching experience of creating something you want to see.
+Even in the face of any development lapse or roadblocks that have no clear path forward, the drive to get back into it and begin that next step of the project will stay with you.
+Anytime is the right time to pick a project back up, approaching problems that once seemed insurmountable with a fresh perspective can bring new ideas and solutions to pave a way forward.
+Looking back, I take great pride in the path taken and the projects end result.
+
+While persistence was a key driver, the isolation of lockdown shed light on the critical value of collaboration and teamwork in achieving larger goals.
+Although solo projects allow for creative freedom and the opportunity to pursue curiosity, they often lack the structure and direction that comes with working in a team.
+These moments of curiosity and exploration are essential for personal growth, but a team provides a framework for consistent execution and progress.
+Upon reflection, I've realized that a salary cannot replace passion, and passion does not always translate directly into a salary.
+Moving forward, I aim to strike a better balance between these truths by engaging in side projects outside of my day job.
+
+My greatest regret was not finding a reliable group to share my journey with, for advice and mentorship.
+A strong support network can sustain motivation, help maintain focus, and prevent burnout.
+Despite my robust background in software engineering and ability to build What2Watchlist on my own, the isolation from Covid-19 impacted my focus and productivity.
+Seeking out meetups and building a social network has made a significant difference in my professional and personal development, and I wish I had pursued this sooner.
+
+In the end, this project has been a testament to setting a goal and achieving it, while also learning new skills and growing as a developer.
+Through vision, determination, and curiosity, What2Watchlist has been realized as a project with immense potential and serves as an excellent showcase of my capabilities.
+Though the app may not be growing rapidly, it remains a source of pride and a deeply rewarding journey.
+Remember that challenges can be overcome with determination and belief in your vision, never give up on what you strive for.
