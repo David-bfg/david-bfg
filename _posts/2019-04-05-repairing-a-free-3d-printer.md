@@ -7,7 +7,7 @@ tags: [3d printing, troubleshoot, fix, curb find]
 render_with_liquid: false
 image:
   path: /assets/img/RigidBot.avif
-  alt: Moto OneNav Option.
+  alt: RigidBot 3D Printer.
 ---
 
 ## Curb Alert!
