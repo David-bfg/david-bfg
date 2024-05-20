@@ -2,7 +2,7 @@
 title: FFX Game Breaking Strategy
 author: david
 date: 2022-08-07 00:00:00 -0500
-categories: [Fun and Resourceful, Game Strategy]
+categories: [Resourceful & Fun, Game Strategy]
 tags:
   [
     final fantasy,
