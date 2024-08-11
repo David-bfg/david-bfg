@@ -10,29 +10,36 @@ image:
   alt: An Abundance of Documents.
 ---
 
-## Job Search Problems (B.S.) to Automate
+## Job Search Problems
 
-I've always found the job search process to be terible, quite simply I'm a programer not a marketer.
-It's emotionally draining and I’d rather be programming “Hello World!”
-Requires consistency
-Broken-promoted job posts
-Like Lottery: (with the current market saturation)
-“I’ve got about the same chance of winning by not playing.
-Goal: anything to improve upon this B.S. so start some automation.
+The job search process has always been a grueling experience for me.
+Maybe I should be better at it by now, but quite simply, I'm a programmer, not a marketer.
+It's an exhausting grind to constantly search for and apply to open positions, leaving me drained when I'd much rather be programming "Hello World!"
+The process requires consistency, to keep at it until things finally line up.
 
-## Tools For The Job
+Platforms like LinkedIn have broken search functionalities, where irrelevant promoted (ad) posts are pushed to the forefront.
+Given the current market saturation, job hunting feels more like a lottery.
+One of my favorite quotes on the lottery is, "I’ve got about the same chance of winning by not playing."
 
-Home NAS
-A Jenkins instance
-A MongoDB instance
-Network+HTTP familiarity
-JS experience
-Cheerio server-side JQuery for lightweight-headless parsing of HTML
-Goal AI/ML automated ranking for filtering out to get best fit jobs
+This project attempts to find any way I can improve upon this mess through automation.
+
+## Automation Tools For The Job
+
+Reviewing all the skills and resourves available I came up with this list as the basis for building a tool for web scraping.
+
+- Home NAS
+  - A Jenkins instance
+  - A MongoDB instance
+- Network+HTTP familiarity
+- JS experience
+- Cheerio server-side JQuery for lightweight-headless parsing of HTML
+  Goal AI/ML automated ranking for filtering out to get best fit jobs
 
 ## Development Process
 
 First step was to find where to scrape. Linkedin and others may have an abundance of posts but if they are of low quality without any good filtering and will push out promoted posts before relevant jobs. I found the right site in builtin, with solid search results & programmer specific filters they made searching for tech jobs look easy.
+
+Long term I'd find that they were very focussed on specific regions. Where the jobs they had that were local had about a 5-7 days between when they were initialy posted and showed up on builtin. Thus I'm working on doing similar with likeden jobs and it will be a lot easier to filter out how terible their results are with my ML recomendation algorithm.
 
 ### Dev. Environment
 
