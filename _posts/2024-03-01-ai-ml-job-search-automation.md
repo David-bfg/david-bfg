@@ -25,15 +25,23 @@ This project attempts to find any way I can improve upon this mess through autom
 
 ## Automation Tools For The Job
 
-Reviewing all the skills and resourves available I came up with this list as the basis for building a tool for web scraping.
+After reviewing my skills and available resources, I had decided upon what to use as the basis for building a web scraping tool:
 
 - Home NAS
-  - A Jenkins instance
-  - A MongoDB instance
-- Network+HTTP familiarity
-- JS experience
-- Cheerio server-side JQuery for lightweight-headless parsing of HTML
-  Goal AI/ML automated ranking for filtering out to get best fit jobs
+  - Jenkins instance
+  - MongoDB instance
+- Network and HTTP familiarity
+- JavaScript experience
+- Cheerio.js, a server-side JQuery for lightweight-headless HTML parsing
+
+My NAS will handle automated scraping jobs and store the results in a local database.
+The goal is to build a script that will run in the background without supervision.
+
+I've got a history of serching through website HTTP traffic for tasks like API integration or finding specific files.
+On most websites, there’s usually a way to make targeted requests for specific data.
+Cheerio.js should integrate nicely, using jQuery for HTML scraping means a simple get request will allow me to extract data without the need for a browser.
+
+Once the scraping process is up and running, the next goal is to leverage AI/ML for ranking jobs and quickly filter out those that aren't a good match.
 
 ## Development Process
 
