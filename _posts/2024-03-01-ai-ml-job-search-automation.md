@@ -45,9 +45,19 @@ Once the scraping process is up and running, the next goal is to leverage AI/ML 
 
 ## Development Process
 
-First step was to find where to scrape. Linkedin and others may have an abundance of posts but if they are of low quality without any good filtering and will push out promoted posts before relevant jobs. I found the right site in builtin, with solid search results & programmer specific filters they made searching for tech jobs look easy.
+The first step was deciding where to scrape for job posts.
+While LinkedIn and similar platforms have an abundance of listings, they often overwhelm you with irrelevant results, making the fire-hose of data more of a hindrance than a help.
+Without quality filtering, most job sites prioritize promoted ads and reposts over relevant opportunities.
 
-Long term I'd find that they were very focussed on specific regions. Where the jobs they had that were local had about a 5-7 days between when they were initialy posted and showed up on builtin. Thus I'm working on doing similar with likeden jobs and it will be a lot easier to filter out how terible their results are with my ML recomendation algorithm.
+I found a promising site in Built In, which offered solid search results and programmer-specific filters, making it easier to find tech jobs.
+However, I discovered that Built In is very focused on specific regions, excluding my local area.
+Local positions had a 5-7 day delay between their initial posting and appearance on Built In.
+
+As a result, I’ve decided to modify my scraper to pull data from LinkedIn Jobs instead.
+With the help of my AI/ML recommendation algorithm, I should be able to filter out the abundant and irrelevant results more effectively.
+
+For the time being, my focus was simply on getting the job scraping to work on Built In.
+The more advanced filtering and AI/ML integration will come later.
 
 ### Dev. Environment
 
