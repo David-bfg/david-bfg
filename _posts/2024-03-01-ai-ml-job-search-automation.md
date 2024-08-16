@@ -59,11 +59,27 @@ With the help of my AI/ML recommendation algorithm, I should be able to filter o
 For the time being, my focus was simply on getting the job scraping to work on Built In.
 The more advanced filtering and AI/ML integration will come later.
 
-### Dev. Environment
+### Development Environment
 
-.mjs (node: ECMAScript Module), file of search queries
-Save response locally from searches & job
-Rate limit queries & Consistent ‘console.log()’
+I began development with a basic NPM project, setting up some ECMAScript Module files (.mjs) and using Cheerio.js for the initial code.
+While I had a clear understanding of the logical steps needed for the scraping process, I started by downloading a single web response to process locally.
+My top priority was ensuring that everything was functioning correctly before deploying the script.
+The last thing I wanted was to flood the server with requests and risk getting my IP blocked.
+
+I was able to rerun the script with small changes, only sending out web requests once everything seemed stable.
+An unexpected issue arose when the Prettier formatter in my editor automatically adjusted the indentation.
+This was necessary to make the HTML easier to read since the server would respond with minified files where all unnecessary formatting was removed.
+The Prettier formatting helped me identify where relevant data was stored, including any hidden fields.
+One particularly useful hidden field was the true "date posted," which allowed me to filter out ghost jobs showing dates years in the past.
+
+One of my key strategies for scraping was utilizing sizable wait periods between web requests.
+Because of this, I found myself relying heavily on `console.log()` commands for feedback on the script’s progress.
+When running the script with live data, there could be a five or ten minute wait to re-encounter a given error.
+Thus ensuring that errors were meaningful and logs clearly indicated the script's different stages became a crucial part of the development process.
+
+TODO: xkcd compiling
+
+After a few long sessions waiting to see that my scripts worked fully, the first stage of development was complete.
 
 ### Web Scraping Tips
 
