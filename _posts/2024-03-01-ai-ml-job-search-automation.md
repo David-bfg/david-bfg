@@ -152,7 +152,8 @@ async function executeCMD(args = [], app = "python3") {
     ...
 ```
 
-Calling Python from a JavaScript project isn’t standard behavior, but with a basic wrapper for the CloudScraper library, I could spawn the process from JS and read the response from standard output. Once set up, it seemed that my requests were flying under the radar.
+Calling Python from a JavaScript project isn’t standard behavior, but with a basic wrapper for the CloudScraper library, I could spawn the process from JS and read the response from standard output.
+Once set up, it seemed that my requests were flying under the radar.
 At Cloudflare’s basic level of blocking, the solution proved effective and stable, as indicated by the commit history.
 
 ## Save Often & handle errors
