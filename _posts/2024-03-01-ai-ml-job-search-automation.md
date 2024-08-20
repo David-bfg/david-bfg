@@ -97,14 +97,63 @@ Test env. Differences:
 ex. IDE auto-format modify example response. Will add spaces where web server will compact.
 Removed non-existent indentation but block text
 
-## Hide With Browser Headers & Rate Limiting
+## Concealment With Browser Headers & Rate Limiting
 
-Automated, use large wait times
-Multiple sources (RIP googleWebCache)
-be nice to the internet archive
-If blocked don’t retry shift source
-Cloudflare DNS level bot blocking-detection
-Match browser request headers as best bet
+During development I had researched and implemented different scraping methods.
+My own twist was to have large wait times between requests and to utilize secondary sources like Google cache (RIP) or the Internet Archive.
+(Note: don’t abuse the Internet Archive - they provide a vital service.)
+If a website blocks your requests, don’t persist; instead, shift to a secondary source.
+
+When making your own HTTP requests programmatically, your first line of defense is to match your request headers with those expected from a browser.
+Specifically, spoofing headers such as `User-Agent`, `Accept-Language`, `Accept-Encoding`, `Accept`, and `Referer` can help your requests blend in.
+
+It's also important to familiarize yourself with the type of rate limiting or bot detection deployed on your target website.
+In my case, the data source used Cloudflare DNS for bot detection.
+While most of my tactics were effective, the script occasionally encountered issues, likely due to HTTP 302 redirect messages.
+Although I could have handled this edge case manually, I eventually opted to include the Python CloudScraper project.
+
+### CloudScraper Wrapper
+
+```python
+import sys
+import cloudscraper
+
+def cloud_scrape():
+    scraper = cloudscraper.create_scraper(
+        browser={
+            'browser': 'chrome',
+            'platform': 'linux'
+        }
+    )
+    args = sys.argv[1:]
+
+    print(scraper.get(args[0]).text)
+
+
+if __name__ == "__main__":
+    cloud_scrape()
+
+```
+
+### Spawn Process from JS
+
+```javascript
+async function executeCMD(args = [], app = "python3") {
+  return new Promise((resolve, reject) => {
+    const runProcess = spawn(app, args);
+
+    let data = "";
+
+    // Capture stdout data
+    runProcess.stdout.setEncoding("utf8");
+    runProcess.stdout.on("data", (chunk) => {
+      data += chunk.toString();
+    });
+    ...
+```
+
+Calling Python from a JavaScript project isn’t standard behavior, but with a basic wrapper for the CloudScraper library, I could spawn the process from JS and read the response from standard output. Once set up, it seemed that my requests were flying under the radar.
+At Cloudflare’s basic level of blocking, the solution proved effective and stable, as indicated by the commit history.
 
 ## Save Often & handle errors
 
