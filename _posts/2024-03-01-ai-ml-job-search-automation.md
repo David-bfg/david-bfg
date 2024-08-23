@@ -83,19 +83,57 @@ After a few long sessions waiting to see that my scripts worked fully, the first
 
 ### Web Scraping Tips
 
-Find the data: REST-API, HTML [ID, Class, relative]
-Found a hidden json blob `<script type=”json”>` with a cache of data not visible elsewhere.
-Tree Traversal for relative data
-From element with ID main we walk through the child divs
-Async, Await, promise timeouts
-DRY: Check ID don’t re-scrape posts
-.text() & .remove()
-Grab the job quick overview-summary text & cleanup
-Glean Data
-‘/\d._year|year._\d/’ looks for bullet points asking for n years of experience
-Test env. Differences:
-ex. IDE auto-format modify example response. Will add spaces where web server will compact.
-Removed non-existent indentation but block text
+- Dig into the web debugger and find out where the data is.
+  - Sometimes you'll find hidden fields or a convenient cache of data.
+    I found a json blob `<script type=”json”>` stored in the head of a webpage that had all the data I could hope for and some hidden data.
+- Expect to either find a REST-API or some server side renderer where data is returned in the HTML page.
+
+  - A REST-API will be the easiest, since the data you're looking for can usually be resolved to a specific data request.
+  - For HTML I will find some unique anchor like an ID or Class and create a relative path for the requested data.
+
+    - JQuery tree traversal
+
+    ```javascript
+    const timePosted = $(element).find("#main").children("div").eq(1).children("div")
+        .eq(0).children("div").eq(0).children("div").eq(0).text().trim();
+    ```
+
+    - Remove irrelevant data (like button text)
+
+    ```javascript
+    $('div[data-id="view-job-button"]').remove();
+    ```
+
+    - Use .text() for grabbing the text content from a full post or a summary-preview card.
+    - Convert elements to text equivalents
+
+    ```javascript
+    $(jobPostElem).find("br").after("\n");
+    $(jobPostElem).find("li").after("\n").before("    ");
+    $(jobPostElem).find("p").after("\n");
+    ```
+
+  - If the site is using some custom solution then just use Playwright it's gonna be easier than reverse engineering things.
+    I chose my current strategy because it seemed simple and elegant but Playwright is also very lightweight and can run headlessly.
+
+- Use async, await, promises & timeouts
+
+```javascript
+async function timeout() {
+  await new Promise(r => setTimeout(r, 2000));
+```
+
+- Don't repeat yourself
+  - Store ID's or create unique identifier
+    - ID reuse is a thing so a secondary identification field for uniqueness may be necessary
+  - Don’t re-scrape posts
+  - Save early save often
+    - Scripts can potentially break from web changes or being blocked, so close gracefully and save existing progress.
+    - With long wait times there is no performance penalty for saving things right after they are processed.
+- Glean whatever data you can.
+  - Single out bullet points `<li>` in the job description.
+  - Lines matching year(s) tend to reference job skills.
+- Be prepared for errors with informative logging & error handling.
 
 ## Concealment With Browser Headers & Rate Limiting
 
