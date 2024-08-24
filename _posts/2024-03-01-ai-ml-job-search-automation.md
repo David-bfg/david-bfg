@@ -194,11 +194,6 @@ Calling Python from a JavaScript project isn’t standard behavior, but with a b
 Once set up, it seemed that my requests were flying under the radar.
 At Cloudflare’s basic level of blocking, the solution proved effective and stable, as indicated by the commit history.
 
-## Save Often & handle errors
-
-With long waits you want to store scraped data often
-Throw error to shell for Jenkins automation
-
 ## AI/ML Auto Job Ranker
 
 had a thumbs up or down rating for jobs to create some data to train on.
