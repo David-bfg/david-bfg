@@ -194,6 +194,31 @@ Calling Python from a JavaScript project isn’t standard behavior, but with a b
 Once set up, it seemed that my requests were flying under the radar.
 At Cloudflare’s basic level of blocking, the solution proved effective and stable, as indicated by the commit history.
 
+## Simple Browsing Jobs App
+
+Once scraping was underway and my database began filling up with job listings, I needed a basic app to browse all the incoming jobs.
+
+I decided to use Spring Boot with Kotlin to create a simple CRUD app.
+I chose this stack because, while Spring Boot is a well-known tool, I hadn’t had any experience with it yet.
+Side projects are the perfect opportunity for learning and experimenting with something new.
+For me, the main goal of my projects is the experience of learning, rather than just programming as a means to an end.
+
+With that in mind, I try and incorporate new tools alongside familiar foundations in each piece of my work.
+Typically, a task will combine something familiar with something new, like JavaScript & Web scraping, Python & AI/ML, CRUD app & Spring Boot.
+Making this just one more technology stack I'd be throwing at the problem.
+
+The result was a bare-bones app for going through job posts.
+On the surface it looked like the same functionality as the website I was scraping from.
+The difference was, I could customize my own fields, aggregate results from multiple searches into one place and tailor the search results to my workflow.
+
+My workflow involved skimming through new job listings, rating them as liked or disliked, and then selecting my favorite opportunities at the end of the week to apply.
+Although it still required a lot of effort, this process was more efficient, condensing the work to a single weekday instead of requiring constant vigilance.
+
+The "liked" attribute was a helpful filter for quickly accessing all the jobs I thought were high-quality.
+However, with all the different job titles, I often found myself forgetting and looking them up multiple times.
+There are many more positions than just the classic "software engineer."
+This pain point ultimately motivated me to add AI/ML rankings to the project.
+
 ## AI/ML Auto Job Ranker
 
 had a thumbs up or down rating for jobs to create some data to train on.
