@@ -219,6 +219,26 @@ However, with all the different job titles, I often found myself forgetting and 
 There are many more positions than just the classic "software engineer."
 This pain point ultimately motivated me to add AI/ML rankings to the project.
 
+## NLP Data Filtering
+
+Before diving into machine learning, my primary focus was on gathering the right data.
+From my experience searching through various job openings, I knew there were specific keywords and phrases that caught my attention.
+I used Natural Language Processing (NLP) to analyze job titles and descriptions.
+Titles were examined for recurring phrases, while descriptions were analyzed through word counts to identify commonly required skills.
+
+The result was a relatively straightforward piece of code, but it required significant manual overview to categorize the recurring phrases or words as relevant.
+I sifted through hundreds of words and phrases, starting with the most common ones until the results no longer seemed relevant, labeling each with a sentiment of good, bad, or neutral.
+While the coding part was simple, the manual review process was a headache.
+About 90% of my time was spent acting like an assembly line, focus on data processing.
+Continually determining whether some word or phrase was relevant, leaving me quite drained by the end of it.
+
+To parse the text, I relied on the Python library NLTK (Natural Language Toolkit).
+It offered convenient presets and customization options, ensuring that terms like `.net` and `node.js` were recognized as single words rather than the end of a sentence.
+Although I could have replaced this with some handwritten or LLM-generated code, NLP wasn't the main focus of this project, so I chose to leverage the NLTK library and explore its features.
+
+This project only scratched the surface of what NLTK could offer.
+A helpful feature I’d appreciated was the set of stop words (like "a," "an," "and," "are," etc.) to filter out high-frequency words that exist primarily for sentence structure.
+
 ## AI/ML Auto Job Ranker
 
 had a thumbs up or down rating for jobs to create some data to train on.
