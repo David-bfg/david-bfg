@@ -241,24 +241,100 @@ A helpful feature I’d appreciated was the set of stop words (like "a," "an," "
 
 ## AI/ML Auto Job Ranker
 
+Goal ML rating-matching of likely interest
 had a thumbs up or down rating for jobs to create some data to train on.
-Program for NLP (natural laguage parser) on job title and post-desctiption
+Presentation on fast.ai course, a free online course structure on AI/ML programming.
+parsed important metrics.
 recurring phrases of job titles
 List of skills mentioned in job post.
-ML rating of likely interest
+assumptions
+supervised vs unsupervised learning
 assumed Supervised learning was the appropriate strategy.
-looking for right ML technique for my dataset.
+difference between just making up a point system or using statistical analysis.
+likelyhood of direct problem solution set vs reality, scope limiting and data massaging to fit what was expected from existing techniques.
+
+### Fast.ai Course
+
+Plenty of cool AI stuff, that’s not data processing
 several examples like throw images in and train animal recognition.
+focus on flashy features to keep newcomers interested
+Not finding birds, evolutionary AI or a LLM problem
+Problem set is tabular data
+
+### Tabular Data
+
 landed on tabulat data ML process. This was tailored to spredseat data and could do things like movie recomendations or health survival rates vs focusing on image recognition.
+Tabular data (Tables, Spreadsheets)
+but tabular data is normally a static set of columns
+Need to flatten dataset job phrase
+Phrase data looks like [‘software’, ‘engineer’, ‘software engineer’]
+Represent binary/numerically
+looking for right ML technique for my dataset.
+
+| Gender | Age | Education   | Education (num) | Salary (actual) | Salary (AI/ML) |
+| :----- | :-- | :---------- | :-------------- | --------------: | -------------: |
+| m      | 20  | High School | 12              |          15,000 |        ~16,000 |
+| f      | 33  | College     | 15              |          21,000 |        ~20,000 |
+| m      | 27  | Masters     | 18              |          28,000 |        ~26,000 |
+| m      | 48  | PHD         | 20              |          40,000 |        ~37,500 |
+
+Enumerable data
+Map set to numeric value
+Boolean vs progression
+True or false
+N >= 3 then a logical progression like child, teen, adult, senior
+Flatten job phrases O(n) dataset
+Phrases with 1 occurrence irrelevant
+1% cutoff longer phrases less likely have .5% cutoff
+Human review for phrase relevancy
 
 dataset conformity
 not all possible fields the same ex tags, phrases could be endles.
 tabular data requured a fix set of data.
-created a filter for minimun occurence to be a relevant phrase.
 gave a finite set of data to focus on to conform with the needs of making a ML model for tabular data.
 defined set of common phrases and relevant skills to look for in a job title and model weather or not they existed in a job title.
 from there so long as it was a fixed set of columns the process model training could start and ended up with around an 85% accuracy.
 
+| Software | Engineer | Software Engineer | Lead | Liked (actual) | Liked (AI/ML) |
+| :------- | :------- | :---------------- | :--- | -------------: | ------------: |
+| 1        | 1        | 0                 | 0    |              1 |         ~0.75 |
+| 1        | 1        | 1                 | 0    |              1 |          ~0.9 |
+| 0        | 0        | 0                 | 0    |              0 |         ~0.25 |
+| 1        | 1        | 1                 | 1    |              0 |          ~0.1 |
+
+Eventually I got something from the data
+A measurement – Reads temperature
+My judgment is true north
+No need to mindlessly follow google maps off a bridge
+
+## Jenkins Nightlys
+
+Run scraping job at regular interval
+
+Jenkins
+Docker
+NPM default plugin
+Trouble adding python for CloudScraper
+Built custom image to include python venv
+Docker read-only, all python dependencies had to be stored within the project folder so virtual environments solved this
+Other projects in same folder
+Reference with “../Other_project/”
+Git wouldn’t easily download Submodules – SSH certs
+External python deps were a separate project
+
+Run AI/ML scripts manually
+
 ## Future Plans
 
-I attended a talk from someone who presented about their process for automating the application process by documenting where they applied and how they tailored their resume. I intend to contact them about integrating some of their processes to extend the scope of the toolset I've made.
+Future goal integrate into scrapper to filter
+linkedin scrape.
+Dev. collab with others.
+I attended a talk from someone who presented about their process for automating the application process by documenting where they applied and how they tailored their resume.
+I intend to contact them about integrating some of their processes to extend the scope of the toolset I've made.
+
+## Git Repo's
+
+Public repositories
+
+Scraper repo is kept private I'm happy to share it with anyome.
+Just assume it would be against somebodys terms of service.
