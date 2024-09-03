@@ -241,17 +241,19 @@ A helpful feature I’d appreciated was the set of stop words (like "a," "an," "
 
 ## AI/ML Auto Job Ranker
 
-Goal ML rating-matching of likely interest
-had a thumbs up or down rating for jobs to create some data to train on.
-Presentation on fast.ai course, a free online course structure on AI/ML programming.
-parsed important metrics.
-recurring phrases of job titles
-List of skills mentioned in job post.
-assumptions
-supervised vs unsupervised learning
-assumed Supervised learning was the appropriate strategy.
-difference between just making up a point system or using statistical analysis.
-likelyhood of direct problem solution set vs reality, scope limiting and data massaging to fit what was expected from existing techniques.
+At this point, I had set up a parser to extract key metrics with the intention of using machine learning to rate job matches based on the "liked" attribute.
+It seemed logical that I could derive meaningful insights from this data, but since I lacked prior experience with machine learning, I knew I had some studying to do.
+
+I was familiar with the two main categories of machine learning: supervised and unsupervised.
+This problem appeared to fit into the supervised category, as the training would be guided by my ratings of each dataset.
+
+Based on my understanding of the dataset, I initially imagined creating a custom point system combined with statistical analysis to assign weights to each metric.
+This seemed like it would be "good enough" for my purposes.
+In essence, this approach is similar to what machine learning does under the hood; I just needed to figure out how to train a model using my data.
+I was later surprised by how well this problem set align with machine learning, although it required significant scope limiting and data preprocessing to meet the requirements of existing tools.
+
+As I began my AI/ML learning journey, someone recommended fast.ai as a good starting point.
+It’s a free online course focused on teaching AI/ML programming in Python.
 
 ### Fast.ai Course
 
