@@ -257,11 +257,13 @@ It’s a free online course focused on teaching AI/ML programming in Python.
 
 ### Fast.ai Course
 
-Plenty of cool AI stuff, that’s not data processing
-several examples like throw images in and train animal recognition.
-focus on flashy features to keep newcomers interested
-Not finding birds, evolutionary AI or a LLM problem
-Problem set is tabular data
+While AI/ML has numerous applications, such as image recognition and classification, facial recognition, character recognition, NLP, and cutting-edge technologies like Midjourney or large language models, (LLMs) my problem was inherently about data processing.
+Data processing has long been a staple of computing, but it doesn’t typically capture much excitement in an introductory lecture.
+It took several courses before the focus shifted from computer vision problems to data processing.
+
+Like everyone else, I can see there are some really cool things you can do with AI, but the specific problem I’m focused on isn’t particularly flashy.
+The course began to address the core concepts I was interested in about halfway through, in the fifth lecture.
+This is where I learned that my problem set was classified as tabular data.
 
 ### Tabular Data
 
