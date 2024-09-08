@@ -267,37 +267,53 @@ This is where I learned that my problem set was classified as tabular data.
 
 ### Tabular Data
 
-landed on tabulat data ML process. This was tailored to spredseat data and could do things like movie recomendations or health survival rates vs focusing on image recognition.
-Tabular data (Tables, Spreadsheets)
-but tabular data is normally a static set of columns
-Need to flatten dataset job phrase
-Phrase data looks like [‘software’, ‘engineer’, ‘software engineer’]
-Represent binary/numerically
-looking for right ML technique for my dataset.
+Tabular data refers to information stored in tables, such as databases or spreadsheets.
+Many machine learning problems are built around tabular data, including tasks like movie recommendations or predicting health outcomes.
+Even image recognition, on a larger scale, could be framed as a tabular data problem.
+
+Here’s an example of what a tabular AI/ML problem set might look like:
 
 | Gender | Age | Education   | Education (num) | Salary (actual) | Salary (AI/ML) |
 | :----- | :-- | :---------- | :-------------- | --------------: | -------------: |
 | m      | 20  | High School | 12              |          15,000 |        ~16,000 |
 | f      | 33  | College     | 15              |          21,000 |        ~20,000 |
 | m      | 27  | Masters     | 18              |          28,000 |        ~26,000 |
-| m      | 48  | PHD         | 20              |          40,000 |        ~37,500 |
+| f      | 48  | PHD         | 20              |          40,000 |        ~37,500 |
 
-Enumerable data
-Map set to numeric value
-Boolean vs progression
-True or false
-N >= 3 then a logical progression like child, teen, adult, senior
-Flatten job phrases O(n) dataset
-Phrases with 1 occurrence irrelevant
-1% cutoff longer phrases less likely have .5% cutoff
-Human review for phrase relevancy
+In this example, we show how each column requires a numerical representation to create an AI/ML model.
+Columns are not dynamic, they can’t be added without recalculating the model and dealing with null values is a significant complication.
+Categorical data, such as gender or education, is mapped to integers.
+For boolean values like male or female, they are represented as 1 or 0.
+For more than two categories (like education), you’d need to create a logical progression of lowest to highest, e.g., high school, college, master’s, PhD or child, teen, adult, senior.
 
-dataset conformity
-not all possible fields the same ex tags, phrases could be endles.
-tabular data requured a fix set of data.
-gave a finite set of data to focus on to conform with the needs of making a ML model for tabular data.
-defined set of common phrases and relevant skills to look for in a job title and model weather or not they existed in a job title.
-from there so long as it was a fixed set of columns the process model training could start and ended up with around an 85% accuracy.
+This method describes
+
+supervised learning
+: where we have known outcomes (e.g., salary) to train the model on.
+
+Unsupervised learning
+: works with datasets that don’t have a specific outcome column, focusing on finding patterns or subgroups.
+
+Once the model is trained, it can predict outcomes, such as estimating salary based on the given metrics.
+
+The challenge in converting my job dataset into a tabular format was the need to "flatten" it.
+Meaning, each column and row corespond to one number.
+Mentally, I think of the job dataset as having a phrases column that lists all relevant phrases in a job like`[‘software’, ‘engineer’, ‘software engineer’]`.
+These need to be converted into numerical representations.
+A simple enumeration wasn’t feasible, phrases are random and disjoint they don’t have any logical progression, so current methods wouldn't work so easily.
+
+Looking at some of the methods for representing new categories, it appeared that you can make up a new column so long as it represents something meaningful.
+Commonly a new column will be made to represent a classification criteria.
+Imagine doing a study on household struggles where you have all the needed economic data without knowing if they fall above or below the poverty line.
+Well then you’d want to calculate that and add it to your dataset, to help represent such a meaningful data point.
+We'll just make up a new column for each job phrase, a binary column to represent if a word or phrase is present.
+
+This approach has limitations.
+Adding new columns to tables tends to be costly, if new words appeared a new model would be created from scratch.
+To manage this, I pull from a set of known relevant phrases and filter out anything having too little representation to be meaningful.
+
+Once the data is processed, it can be transformed for AI/ML model training.
+Here’s an example of flattened job data:
 
 | Software | Engineer | Software Engineer | Lead | Liked (actual) | Liked (AI/ML) |
 | :------- | :------- | :---------------- | :--- | -------------: | ------------: |
@@ -306,10 +322,12 @@ from there so long as it was a fixed set of columns the process model training c
 | 0        | 0        | 0                 | 0    |              0 |         ~0.25 |
 | 1        | 1        | 1                 | 1    |              0 |          ~0.1 |
 
-Eventually I got something from the data
-A measurement – Reads temperature
-My judgment is true north
-No need to mindlessly follow google maps off a bridge
+Each significant phrase is represented as a boolean value.
+Related terms, like "software" and "software engineer," are processed independently, allowing the machine learning model to derive their weights separately.
+With this setup, I began training models and eventually achieved around 85% accuracy.
+However, as this [**XKCD comic**](https://xkcd.com/325/) humorously shows, having a 97% seller rating doesn’t tell you if 1/30 receive a Bobcat in the mail.
+There's no need to mindlessly trust what the computer says and follow google maps off a bridge.
+Having trained the model myself I know it’s a tool for guidance, not absolute truth.
 
 ## Jenkins Nightlys
 
