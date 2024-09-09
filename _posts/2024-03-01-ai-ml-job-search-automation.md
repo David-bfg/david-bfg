@@ -331,20 +331,22 @@ Having trained the model myself I know it’s a tool for guidance, not absolute 
 
 ## Jenkins Nightlys
 
-Run scraping job at regular interval
+With a functional codebase in place, the final step was automating nightly runs.
+For this, I chose Jenkins, a tool I've used before and one that’s widely adopted due to its ease of use and extensive plugin ecosystem.
+Setting up jobs to run at regular intervals didn’t take much effort, and Jenkins proved to be an effective choice for the task.
 
-Jenkins
-Docker
-NPM default plugin
-Trouble adding python for CloudScraper
-Built custom image to include python venv
-Docker read-only, all python dependencies had to be stored within the project folder so virtual environments solved this
-Other projects in same folder
-Reference with “../Other_project/”
-Git wouldn’t easily download Submodules – SSH certs
-External python deps were a separate project
+I quickly got Jenkins running in Docker, setting up a simple installation of the NPM plugin to manage my JavaScript environment.
+However, I soon realized that I needed Python integration as well, since my project utilized the CloudScraper Python library.
+Unfortunately, Jenkins lacked a convenient plugin for this, so I had to create a custom Docker image with a Python virtual environment (venv) installed.
+The reason for using venv was that Docker images are read-only except for the project folder, and I needed all dependencies to reside in that folder.
 
-Run AI/ML scripts manually
+One hiccup I encountered was that the various components of my project were stored in separate repositories, while Jenkins typically manages only one repository per project.
+My initial attempt to solve this using Git submodules, with a root repository pulling in the others, didn’t work as expected—Jenkins ended up loading empty folders.
+After some troubleshooting, I traced the issue to a lack of SSH certificate support within Jenkins.
+
+In the end, I opted for a simpler solution; treating each repository as a separate Jenkins project.
+Since all of the projects were housed in the same directory, accessing one project from another was easy using relative paths like ../Other_project/.
+This setup worked so it was acceptable, but knowingly not ideal.
 
 ## Future Plans
 
