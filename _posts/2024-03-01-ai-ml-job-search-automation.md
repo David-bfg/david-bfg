@@ -350,11 +350,17 @@ This setup worked so it was acceptable, but knowingly not ideal.
 
 ## Future Plans
 
-Future goal integrate into scrapper to filter
-linkedin scrape.
-Dev. collab with others.
-I attended a talk from someone who presented about their process for automating the application process by documenting where they applied and how they tailored their resume.
-I intend to contact them about integrating some of their processes to extend the scope of the toolset I've made.
+There's always more to be done in code and development, but immediate needs tend to take priority.
+The most pressing feature on my roadmap is adding support for LinkedIn integration, as it's crucial for job aggregation.
+Other plans are more of a "nice to have" and can be put on the back burner for now.
+
+That said, I'd love to improve documentation in the future to help others set up this project for their own use.
+Currently, it's a bit rough around the edges since it’s tailored to my needs as I’m the only user.
+However, with the right polish, it could turn into a collaborative project for others actively job hunting.
+
+I recently saw a presentation where someone showcased a system that uses AI to automate the job application process.
+It had some impressive features but lacked the job aggregation capabilities I’ve built.
+I’m considering reaching out to them to explore a potential collaboration, combining their automation tools with my job scraping setup to create a more comprehensive solution.
 
 ## Git Repo's
 
