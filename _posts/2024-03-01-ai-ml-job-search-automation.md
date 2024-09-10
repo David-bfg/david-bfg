@@ -366,5 +366,11 @@ I’m considering reaching out to them to explore a potential collaboration, com
 
 Public repositories
 
-Scraper repo is kept private I'm happy to share it with anyome.
-Just assume it would be against somebodys terms of service.
+- Job browser project [**Jobs Browser**](https://github.com/David-bfg/jobs-browser)
+- NLP & AI/ML project [**Parse and Rank**](https://github.com/David-bfg/job-parse-and-rank)
+
+Private repository
+
+- Job Scraper: scraper repo is kept private, although I'm happy to share it with anyone.
+  [**Contact Me**](/about-me/#contact-me) for access and include your github account.
+  I just assume someone could consider it against the terms of service, be that microsoft or BuiltIn.
